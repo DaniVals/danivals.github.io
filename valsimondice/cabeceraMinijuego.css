@@ -1,0 +1,89 @@
+/*valores fijos*/
+body{
+    background-color: #505050;
+}
+.cabecera{
+    background-color: #000000; 
+    color: #ffffff;
+    text-align: center;
+}
+.mitadInstrucciones{
+    background-color: #505050;
+    color: #ffffff;
+    text-align: center;
+}
+.mitadJuego{
+    background-color: #646464;
+}
+/*tamaño maximo*/
+@media (min-width: 1000px){ 
+    .cabecera{
+        position: fixed;
+        bottom: 85%;
+        top: 0%;
+        left: 0%;
+        right: 0%;
+    }
+    .mitadInstrucciones{
+        position: absolute;
+        bottom: 0%;
+        top: 15%;
+        left: 0%;
+        right: 70%;
+    }
+    .mitadJuego{
+        position: fixed;
+        bottom: 0%;
+        top: 15%;
+        left: 30%;
+        right: 0%;
+    }
+}
+/*tamaño medio*/
+@media (min-width:600px) and (max-width: 999px){
+    .cabecera{
+        position: fixed;
+        bottom: 85%;
+        top: 0%;
+        left: 0%;
+        right: 0%;
+    }
+    .mitadInstrucciones{
+        position: absolute;
+        bottom: 0%;
+        top: 15%;
+        left: 0%;
+        right: 50%;
+    }
+    .mitadJuego{
+        position: fixed;
+        bottom: 0%;
+        top: 15%;
+        left: 50%;
+        right: 0%;
+    }
+}
+/*tamaño minimo o movil*/
+@media (max-width: 599px){
+    .cabecera{
+        position: absolute;
+        bottom: 85%;
+        top: 0%;
+        left: 0%;
+        right: 0%;
+    }
+    .mitadInstrucciones{
+        position: absolute;
+        bottom: 0%;
+        top: 15%;
+        left: 0%;
+        right: 0%;
+    }
+    .mitadJuego{
+        position: absolute;
+        bottom: -100%;
+        top: 100%;
+        left: 0%;
+        right: 0%;
+    }
+}
