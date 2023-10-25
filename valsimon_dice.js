@@ -31,9 +31,6 @@ async function pressButton(colorPulsado) {
         colorArray[contadorColor] = Math.floor(Math.random() * 4);
         indexManual=0;
         //bucleAcabado=true;
-        //if (record == null){
-            console.log(record)
-        //}
     }
                             
     //debug
