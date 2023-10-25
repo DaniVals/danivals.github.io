@@ -19,7 +19,7 @@ let textoRecord = document.getElementById("record");
 var sleep = function(ms){
     return new Promise(resolve => setTimeout(resolve, ms));
 }
-
+//bucle principal (aunque solo se ejecute al pulsar un boton)
 async function pressButton(colorPulsado) {
     
     //empezar partida
@@ -32,17 +32,6 @@ async function pressButton(colorPulsado) {
         indexManual=0;
         //bucleAcabado=true;
     }
-                            
-    //debug
-    /*
-    console.log("debug zone");
-    console.log("el array:"+colorArray);
-    console.log("el contador:"+contadorColor);
-    console.log("el index manual:"+indexManual);
-    console.log("el detector de bucle:"+bucleAcabado);
-    console.log("");
-    */
-   //alert(document.documentElement.clientWidth+" x "+document.documentElement.clientHeight);
     
     if (juegoActivo==true){ //partida activa
         if(bucleAcabado==true){ //esto es para evitar sobrecarga de click

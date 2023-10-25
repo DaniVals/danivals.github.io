@@ -5,8 +5,6 @@
 .centradoCentro{
     position: absolute;
 }
-
-
 /*tamaño maximo*/
 @media (min-width: 1000px){ 
     .centradoAbajo{
