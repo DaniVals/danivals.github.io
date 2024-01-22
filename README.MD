@@ -7,3 +7,7 @@ Cada pagina y sus archivos (CSS, JS, subpaginas...) estaran en su propia carpeta
 
 Si quieres usar estas paginas con proposito cualquier proposito, puedes hacerlo, ya sea copiar codigo para aprender tu mismo, o para jugar a los diferentes minijuegos que voy creando, esto siempre y cuando no se intente la apoderacion de dichos recursos 
 (Basicamente que puedes ver y copiar lo que quieras mientras no digas que lo has hecho tu)
+
+# valsimon dice
+una version web de Simon Dice, se puede jugar de forma infinita usando un array y te guarda tu record usando las cookies
+a̬͢_̵̗̭̮ͤ͡n̢̍ḑ̢̦̠̥̯͉̤̼̫̥̬̭̦̘̼̅̓̂ͨͪͪ̇͌ͧ͂ͯ̓̚͞͡ ş̶̰͇̥͓̻̲͔̤ͧͨ̀̀̑̀́́̀̒ͮͬͦ͌̂̇̐̂́̚͜͝͞͠ͅo̳͎̣͙ͪͅḿ̶̷̦̖̼͎̻̭̩͙͈̰̀̑͂ͩͣ̏̊ͨ́̀̒͋̔̚͢_̸̤͛e̷̴̡̢̧͈̠̘̻̱̙̠̱͍̊̔ͩ̊̃̐̓̈ͯ̓̐̀͜͜͡ͅ s̢͖̀̍̊͛͗ͦ̓͗ͮ͟͜͢ę͉̟̪̌c̴̶̸̴̢̢̟̠̹͈̞̬̹̪̳̫̯͉̭͚̀̆̔̄͂ͯͬ͛̆ͦ̋ͯͦͪͧͥ̄͛̍͋͜͜͢͡ͅṛ̘e̖t̶̷̡̢̛̝͖̺̠̖̙͚͍̪̦̪̝̪̾̐̏̓̊̑̈́͛ͬ͗̓ͭ͜͝͞ş̫̰͍͓̓ͤ͐̔̕
