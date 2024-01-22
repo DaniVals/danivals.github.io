@@ -39,6 +39,7 @@ async function pressButton(colorPulsado) {
     
     //funcion ARG
     ARG(colorPulsado);
+    console.log(historialARG);
     //empezar partida
     if(colorPulsado == 4 && bucleAcabado==true){
         juegoActivo = true;
