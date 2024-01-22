@@ -1,0 +1,23 @@
+Solucion ARG (esto es una pendejada para mi primo asi que no es para tomarse en serio ni esperes mucha dificultad)
+
+Pista:
+El primer juego, el primer paso
+jugable es, y ya lo has probado
+a la vista esta, pero se ignora
+si quieres lo quieres, busca sin demora
+
+
+
+-------- SPOILER --------
+
+Todo empieza con la parte inferior al titulo
+ººªªºªººººªªººªªºªºººªªºººªªººªªººªªºººººªººººªº ºªºººªººººªªªºººººªªººªººªºººªªºººªªººººººªªºªªº ººªªººººººªªºªªºººªªºªººººªªºªªººªºººªººººªªªººº ººªªººªºººªªººªººªºººªªºººªªºªªººªºººªºººªººººªª
+
+que al pasarlo a 1 y 0 y separarlos un una tabla de 6x4 (pista indicada por el espacio)
+codigos colores en hexadecimal -> binario
+(Green) 43F30B - 00110100 00110011 01000110 00110011 00110000 01000010
+(Red)   D82F06 - 01000100 00111000 00110010 01000110 00110000 00110110
+(Blue)  0646D8 - 00110000 00110110 00110100 00110110 01000100 00111000
+(Blue)  22F6DC - 00110010 00110010 01000110 00110110 01000100 01000011
+
+con el codigo GRBB en referencia a Please dont touch anything, se introduce en la pagina y te llevara a la pagina de victoria

@@ -1,5 +1,6 @@
 //variables normales
 let colorArray = [];
+let historialARG = [];
 let contadorColor;
 let juegoActivo;
 let indexManual;
@@ -19,9 +20,23 @@ let textoRecord = document.getElementById("record");
 var sleep = function(ms){
     return new Promise(resolve => setTimeout(resolve, ms));
 }
+//funcion para el ARG
+function ARG(colorPulsado){
+    historialARG[historialARG.length]=colorPulsado
+    if (historialARG.length==4){
+        if( historialARG[0]==2&&
+            historialARG[1]==0&&
+            historialARG[2]==3&&
+            historialARG[3]==3)
+        window.location.href="win.html";
+    }
+}
 
+//al pulsar un boton (se llama desde el html)
 async function pressButton(colorPulsado) {
     
+    //funcion ARG
+    ARG(colorPulsado);
     //empezar partida
     if(colorPulsado == 4 && bucleAcabado==true){
         juegoActivo = true;
