@@ -23,13 +23,12 @@ var sleep = function(ms){
 //funcion para el ARG
 function ARG(colorPulsado){
     historialARG[historialARG.length]=colorPulsado
-    console.log(historialARG);
     if (historialARG.length==4){
         if( historialARG[0]==2&&
             historialARG[1]==0&&
             historialARG[2]==3&&
             historialARG[3]==3)
-        console.log("reto superado");
+        
         window.location.href="win.html";
     }
 }
@@ -39,7 +38,7 @@ async function pressButton(colorPulsado) {
     
     //funcion ARG
     ARG(colorPulsado);
-    console.log(historialARG);
+    
     //empezar partida
     if(colorPulsado == 4 && bucleAcabado==true){
         juegoActivo = true;
