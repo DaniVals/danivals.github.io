@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+p:not(.noTrans), h1, a{
+    transition: color ease var(--CeroCincoSecs);
+}
+svg{
+    transition: fill ease var(--CeroCincoSecs);
+}
+:root{
+
+    /* modo claro */
+    --LightMode-TXT: #000000;
+    --LightMode-BG1: #ffffff;
+    --LightMode-BG2: #dddddd;
+    --LightMode-BG3: #aaaaaa;
+    --LightMode-BG4: #888888;
+
+    /* modo oscuro */
+    --DarkMode-TXT: #ffffff;
+    --DarkMode-BG1: #000000;
+    --DarkMode-BG2: #161616;
+    --DarkMode-BG3: #333333;
+    --DarkMode-BG4: #555555;
+
+    /* colores usados */
+    --TXT: var(--DarkMode-TXT);
+    --BG1: var(--DarkMode-BG1);
+    --BG2: var(--DarkMode-BG2);
+    --BG3: var(--DarkMode-BG3);
+    --BG4: var(--DarkMode-BG4);
+
+    /* otros valores */
+    --CeroCincoSecs:0.0s;
+    --transicion-BG: background-color ease var(--CeroCincoSecs);
+    --alturaSettings: -100px;
+}
+/*
+================================================= SETTINGS =================================================
+*/
+#settings{
+    position: fixed;
+    top: 0px;
+    right: 10px;
+
+    background-color: var(--BG1);
+    border-end-end-radius: 1000px;
+    border-end-start-radius: 1000px;
+    padding: 5px;
+
+    transform: translateY(var(--alturaSettings));
+    transition: var(--CeroCincoSecs) ease;
+    width: 60px;
+}
+#settings svg{
+    fill: var(--TXT);
+    width: 100%;
+    height: auto;
+}
+#settings svg:not(#settingSvg) path{
+    transform: scale(2);
+}
+
+/* slideCheck */
+.slideCheck input{
+    display: none;
+}
+.slideCheck {
+    position: relative;
+    display: inline-block;
+    background-color: var(--BG2);
+    transition: var(--transicion-BG);
+    border-radius: 25px;
+    
+    width: 60px;
+    height: 30px;
+}
+.slideCheck > div{
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-left: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+
+    overflow: hidden;
+
+    background-color: var(--BG1);
+    transition: var(--CeroCincoSecs) ease;
+}
+.slideCheck:has(input:checked) > div{
+    transform: translateX(30px);
+}

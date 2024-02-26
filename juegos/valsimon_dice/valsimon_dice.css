@@ -1,0 +1,7 @@
+body{
+    background-color: var(--BG3);
+    transition: var(--CeroCincoSecs) ease;
+}
+p{
+    color: var(--TXT);
+}

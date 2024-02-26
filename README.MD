@@ -1,13 +1,12 @@
-Un repositorio publico reservado a mis experimentos con paginas web.
+Un repositorio publico reservado a mis experimentos con paginas web (mayoritariamente juegos).
 
-Al abrir te saldra (si no estoy haciendo pruebas) no te cargara nada, ya que tendras que poner /[nombre de carpeta] para abrir una carpeta como pagina, aun asi dejare aqui las paginas funcionales.
-https://danivals.github.io/valsimondice/
+Al abrir te saldra una seccion con paginas abiertas al publico y otras que no, en verdad todas estan abiertas, solo que las cerradas seguramente esten sin acabar o no estan pensadas para usarse sino mas bien como experimentos.
 
-Cada pagina y sus archivos (CSS, JS, subpaginas...) estaran en su propia carpeta, por lo que se consideran paginas y proyectos INDEPENDIENTES, solo que estan unidos a este menu inicial para no crear multiples repositorios.
+Cada pagina y sus archivos (CSS, JS, subpaginas...) estaran en su propia carpeta menos CSS basicos y el JS de las cookies (para evitar codigo repetido)
+,por lo que se consideran paginas y proyectos INDEPENDIENTES, unidos a traves de un [lobby](https://danivals.github.io/).
 
-Si quieres usar estas paginas con proposito cualquier proposito, puedes hacerlo, ya sea copiar codigo para aprender tu mismo, o para jugar a los diferentes minijuegos que voy creando, esto siempre y cuando no se intente la apoderacion de dichos recursos 
+Si quieres usar estas paginas con cualquier proposito, puedes hacerlo, ya sea copiar codigo para aprender tu mismo, o para jugar a los diferentes minijuegos que voy creando, usar los diferentes experimentos (leyendo antes las precauciones), esto siempre y cuando no se intente la apoderacion de dichos recursos.
 (Basicamente que puedes ver y copiar lo que quieras mientras no digas que lo has hecho tu)
 
-# valsimon dice
-una version web de Simon Dice, se puede jugar de forma infinita usando un array y te guarda tu record usando las cookies
-a̬͢_̵̗̭̮ͤ͡n̢̍ḑ̢̦̠̥̯͉̤̼̫̥̬̭̦̘̼̅̓̂ͨͪͪ̇͌ͧ͂ͯ̓̚͞͡ ş̶̰͇̥͓̻̲͔̤ͧͨ̀̀̑̀́́̀̒ͮͬͦ͌̂̇̐̂́̚͜͝͞͠ͅo̳͎̣͙ͪͅḿ̶̷̦̖̼͎̻̭̩͙͈̰̀̑͂ͩͣ̏̊ͨ́̀̒͋̔̚͢_̸̤͛e̷̴̡̢̧͈̠̘̻̱̙̠̱͍̊̔ͩ̊̃̐̓̈ͯ̓̐̀͜͜͡ͅ s̢͖̀̍̊͛͗ͦ̓͗ͮ͟͜͢ę͉̟̪̌c̴̶̸̴̢̢̟̠̹͈̞̬̹̪̳̫̯͉̭͚̀̆̔̄͂ͯͬ͛̆ͦ̋ͯͦͪͧͥ̄͛̍͋͜͜͢͡ͅṛ̘e̖t̶̷̡̢̛̝͖̺̠̖̙͚͍̪̦̪̝̪̾̐̏̓̊̑̈́͛ͬ͗̓ͭ͜͝͞ş̫̰͍͓̓ͤ͐̔̕
+# [valsimon dice](https://danivals.github.io/juegos/valsimon_dice/)
+Una version web de Simon Dice, se puede jugar de forma infinita usando un array y te guarda tu record usando las cookies
