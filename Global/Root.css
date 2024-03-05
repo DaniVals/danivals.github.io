@@ -12,6 +12,7 @@ svg{
 
     /* modo claro */
     --LightMode-TXT: #000000;
+    --LightMode-DESC: #777777;
     --LightMode-BG1: #ffffff;
     --LightMode-BG2: #dddddd;
     --LightMode-BG3: #aaaaaa;
@@ -19,6 +20,7 @@ svg{
 
     /* modo oscuro */
     --DarkMode-TXT: #ffffff;
+    --DarkMode-DESC: #999999;
     --DarkMode-BG1: #000000;
     --DarkMode-BG2: #161616;
     --DarkMode-BG3: #333333;
@@ -26,6 +28,7 @@ svg{
 
     /* colores usados */
     --TXT: var(--DarkMode-TXT);
+    --DESC: var(--DarkMode-DESC);
     --BG1: var(--DarkMode-BG1);
     --BG2: var(--DarkMode-BG2);
     --BG3: var(--DarkMode-BG3);
@@ -35,6 +38,22 @@ svg{
     --CeroCincoSecs:0.0s;
     --transicion-BG: background-color ease var(--CeroCincoSecs);
     --alturaSettings: -100px;
+}
+/*
+================================================= colores globales =================================================
+*/
+body{
+    
+    color: var(--TXT);
+    background-repeat: repeat;
+    background-size: auto;
+    background-attachment: fixed;
+    z-index: -100;
+    width: 100%;
+    
+    background-color: var(--BG3);
+    background-image: url('fondo gameboy claro.png');
+    transition: var(--CeroCincoSecs) ease;
 }
 /*
 ================================================= SETTINGS =================================================

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bingo</title>
+    <link rel="stylesheet" href="bingo.css">
+    <link rel="stylesheet" href="/Global/Root.css">
+    <script src="bingo.js"></script>
+    <script src="/Global/Cookies.js"></script>
+</head>
+<!-- Settings (copiar en todas) -->
+<div id="settings">
+    <svg onclick="location.href='/'" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M13 2v-2l10 3v18l-10 3v-2h-9v-7h1v6h8v-18h-8v7h-1v-8h9zm-2.947 10l-3.293-3.293.707-.707 4.5 4.5-4.5 4.5-.707-.707 3.293-3.293h-9.053v-1h9.053z"/></svg>
+    <label class="slideCheck" for="darkMode">
+        <input type="checkbox" id="darkMode" onclick="clickDarkMode()">
+        <div><img id="darkModeIcon" src="" alt=""></div>
+    </label>
+    <svg onclick="bajarDivSettings()" id="settingSvg" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m16.843 10.211c.108-.141.157-.3.157-.456 0-.389-.306-.755-.749-.755h-8.501c-.445 0-.75.367-.75.755 0 .157.05.316.159.457 1.203 1.554 3.252 4.199 4.258 5.498.142.184.36.29.592.29.23 0 .449-.107.591-.291 1.002-1.299 3.044-3.945 4.243-5.498z"/></svg>
+</div>
+<header>
+    <h1>Bingo Generator</h1>
+</header>
+<body onload="loadMain()">
+    <div class="rows">
+        <div id="apartados">
+
+            <h3>Generar Tamaño</h3>
+            <input type="number" id="numeroFilas" value="3">
+            <label for="numeroFilas">Filas</label>
+            <br>
+            <input type="number" id="numeroBotones" value="3">
+            <label for="numeroBotones">Columnas</label>
+            <br>
+            <button onclick="crearDesdePagina()" id="generar">Generar botones</button>           
+            <br>
+            <h3>Gestionar colores</h3>
+            <div id="colorSettings">
+                <label id="colorChangeIcon" for="colorChange">
+                    <input type="checkbox" id="colorChange" onclick="escritura()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M14.078 7.061l2.861 2.862-10.799 10.798-3.584.723.724-3.585 10.798-10.798zm0-2.829l-12.64 12.64-1.438 7.128 7.127-1.438 12.642-12.64-5.691-5.69zm7.105 4.277l2.817-2.82-5.691-5.689-2.816 2.817 5.69 5.692z"/></svg>
+                </label>
+                <input type="range" id="colorSelect" min="1" max="5" value="4">
+            </div>
+            <button id="reset" onclick="ponerBlancoTodos()">reiniciar colores</button>
+        </div>
+
+        <div id="tablero">
+            <div class="linea">
+                <button>
+                    <textarea placeholder="Casilla"></textarea>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

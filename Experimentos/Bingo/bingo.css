@@ -1,0 +1,206 @@
+:root{
+    --white: radial-gradient(ellipse at 90% 110%, #555, #aaa);
+    --red: radial-gradient(ellipse at 90% 110%, #500, #a00);
+    --yellow: radial-gradient(ellipse at 90% 110%, #550, #aa0);
+    --green: radial-gradient(ellipse at 90% 110%, #050, #0a0);
+    --blue: radial-gradient(ellipse at 90% 110%, #035, #07a);
+
+    --colorSelected: var(--green);
+
+}
+
+header{
+    background-color: var(--BG1);
+    transition: var(--transicion-BG);
+    color: var(--TXT);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+    width: auto;
+    max-width: 80%;
+    min-height: 200px;
+    
+    margin-top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+}
+header h1{    
+    text-align: center;
+    font-size: 300%;
+}
+
+
+
+
+
+
+
+
+.rows{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    
+    margin-top: 20px;
+    
+    margin-right: 12%;
+    margin-left: 12%;
+}
+#apartados{
+    background-color: var(--BG2);
+    transition: var(--transicion-BG);
+    width: 25%;
+    
+}
+#apartados h3{
+    text-align: center;
+    margin: 10px;
+    
+}
+#apartados #generar,
+#apartados #reset{
+    transition: ease var(--CeroCincoSecs);
+    color: var(--TXT);
+    background-color: var(--BG4);
+    border-color: var(--BG4);
+    border-style: solid;
+    
+    margin-left: 25%;
+    width: 50%;
+    height: 30px;
+    
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#apartados #numeroFilas,
+#apartados #numeroBotones{ 
+    margin-left: 25%;
+    width: 25%;
+
+    transition: ease var(--CeroCincoSecs);
+    color: var(--TXT);
+    background-color: var(--BG4);
+    border-color: var(--BG4);
+    border-style: solid;
+}
+#apartados label{
+    margin-top: 10px;
+}
+
+
+
+
+
+#colorSettings{
+    width: 50%;
+    margin-left: 25%;
+}
+#colorSelect{
+    appearance: none;
+    width: calc(100% - 35px);
+    background-color: #0000;
+    transition: ease var(--CeroCincoSecs);
+}
+#colorSelect::-webkit-slider-runnable-track {
+    height: 30px; 
+    border-radius: 15px; 
+    background: #3330;
+    transition: ease var(--CeroCincoSecs);
+}
+#colorSelect::-webkit-slider-thumb {
+    appearance: none;
+    background: #3330;
+    transition: var(--transicion-BG);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-top: 5px;
+    cursor: pointer; 
+}
+#colorSettings:has(input:checked) #colorSelect::-webkit-slider-runnable-track {
+    background: var(--colorSelected);
+}
+#colorSettings:has(input:checked) #colorSelect::-webkit-slider-thumb {
+    background: #333;
+}
+
+
+#colorChangeIcon {
+    background-color: #0000;
+    display: inline-block;
+    
+    width: 30px;
+    height: 30px;
+}
+#colorChangeIcon input{
+    display: none;
+}
+#colorChangeIcon svg {
+    transition: fill ease var(--CeroCincoSecs);
+    fill: var(--DESC);
+}
+#colorSettings:has(input:checked) #colorChangeIcon svg {
+    fill: var(--TXT);
+}
+
+
+
+
+
+
+
+
+#tablero{
+    background-color: var(--BG2);
+    transition: var(--transicion-BG);
+    width: 75%;
+    margin-left: 50px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    
+}
+#tablero .linea{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 100%;
+    min-height: 100px;
+}
+#tablero button{
+    transition: var(--transicion-BG);
+    
+    margin: 5px;
+    width: 100%;
+    border-width: 0px;
+
+    position: relative;
+}
+#tablero button textarea{
+    background-color: #00000000;
+    transition: color ease var(--CeroCincoSecs);
+    color: var(--TXT);
+    
+    text-align: center;
+    font-weight: bolder;
+    font-size: large;
+    
+    
+    position: absolute;
+    top:    10%;
+    bottom: 10%;
+    left:   20%;
+    right:  20%;
+    resize: none;
+
+    border-width: 0px;
+}
+#tablero button textarea::placeholder { color: var(--TXT); transition: ease var(--CeroCincoSecs);}
+#tablero button ::-webkit-scrollbar{
+    height: 0px;
+}

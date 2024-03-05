@@ -1,7 +1,33 @@
-body{
-    background-color: var(--BG3);
-    transition: var(--CeroCincoSecs) ease;
-}
-p{
+header{
+    background-color: var(--BG1);
+    transition: var(--transicion-BG);
     color: var(--TXT);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+    width: auto;
+    max-width: 80%;
+    min-height: 200px;
+    
+    margin-top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+}
+#arb{
+    text-align: center;
+}
+#arb h1{    
+    text-align: center;
+    font-size: 300%;
+}
+#abj{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.dificult{
+    text-align: center;
 }

@@ -87,17 +87,6 @@ header .der .svgTxt *:hover {
 /*
 ================================================= BODY =================================================
 */
-body{
-    background-color: var(--BG3);
-    background-image: url('fondo gameboy claro.png');
-    transition: var(--CeroCincoSecs) ease;
-
-    background-repeat: repeat;
-    background-size: auto;
-    background-attachment: fixed;
-    z-index: -100;
-    width: 100%;
-}
 body #lista{
     background-color: var(--BG2);
     transition: var(--transicion-BG);
@@ -113,9 +102,6 @@ body #lista{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-}
-body #lista h1{
-    color: var(--TXT);
 }
 body #lista .juego{
     background-color: var(--BG4);

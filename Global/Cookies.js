@@ -40,13 +40,10 @@ function flipSvg(svg, giro) {
 */
 function bajarDivSettings() {
     If= document.documentElement.style.getPropertyValue('--alturaSettings')
-    console.log(If)
     if(If != '0px'||If==''){
-        console.log('CP4')
         document.documentElement.style.setProperty('--alturaSettings', '0px');
         flipSvg('settingSvg',180);
     }else{
-        console.log('CP3')
         document.documentElement.style.setProperty('--alturaSettings', '-100px');
         flipSvg('settingSvg',0);
     }
@@ -58,6 +55,7 @@ function clickDarkMode(){
 function refreshDarkMode(){
     if(getCookie('darkMode')=='true'){
         document.documentElement.style.setProperty('--TXT', 'var(--LightMode-TXT)');
+        document.documentElement.style.setProperty('--DESC', 'var(--LightMode-DESC)');
         document.documentElement.style.setProperty('--BG1', 'var(--LightMode-BG1)');
         document.documentElement.style.setProperty('--BG2', 'var(--LightMode-BG2)');
         document.documentElement.style.setProperty('--BG3', 'var(--LightMode-BG3)');
@@ -66,6 +64,7 @@ function refreshDarkMode(){
         document.getElementById('darkModeIcon').src = '/Global/pixel luna.png'
     }else{
         document.documentElement.style.setProperty('--TXT', 'var(--DarkMode-TXT)');
+        document.documentElement.style.setProperty('--DESC', 'var(--DarkMode-DESC)');
         document.documentElement.style.setProperty('--BG1', 'var(--DarkMode-BG1)');
         document.documentElement.style.setProperty('--BG2', 'var(--DarkMode-BG2)');
         document.documentElement.style.setProperty('--BG3', 'var(--DarkMode-BG3)');
