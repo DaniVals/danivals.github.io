@@ -65,6 +65,24 @@ header .der{
     display: flex;
     flex-direction: column;
 }
+header .der > div{ 
+    margin-top: 5px; 
+    margin-bottom: 5px; 
+    margin-right: 15px; 
+    width: fit-content;
+}
+header .der svg{ 
+    margin-left: 15px;
+    width: 30px;
+}
+header .der .svgTxt * {
+    text-decoration: none;
+    color: inherit;
+}
+header .der .svgTxt *:hover {
+    text-decoration: underline;
+    color: inherit;
+}
 
 /*
 ================================================= BODY =================================================
