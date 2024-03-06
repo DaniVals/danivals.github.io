@@ -19,8 +19,57 @@ async function loadMain(){
 
 
 
+//  ----------------------------------------    generador de tamaño
+function crearDesdePagina() {
+    crearBotones(
+        parseInt(document.getElementById("numeroFilas").value),
+        parseInt(document.getElementById("numeroBotones").value)
+    )
+}
+
+function crearBotones(nFilas, nBotones) {
+
+    // contenedor en el que se generan los botones
+    var contenedor = document.getElementById("tablero")
+    // reiniciar contenedor
+    contenedor.innerHTML = ''
 
 
+    //----  generar divs de las lineas ----
+    
+    //añadir lineas
+    for (var i = 0; i < nFilas; i++) {
+        var linea = document.createElement("div")
+        linea.classList.add("linea")
+        contenedor.appendChild(linea)
+    }
+    
+    //----  generar botones en cada linea ----
+    
+    //array de lineas
+    var lineas = document.getElementsByClassName("linea")
+
+    //por cada linea
+    for (var i = 0; i < lineas.length; i++) {
+        //crear tantos botones como el numero de botones
+        for (var j = 0; j < nBotones; j++) {
+            var boton = document.createElement("button")
+            var textarea = document.createElement("textarea")
+            textarea.setAttribute("placeholder", (i+1)+"-"+(j + 1))
+            boton.appendChild(textarea);
+            lineas[i].appendChild(boton)
+        }
+    }
+    ponerBlancoTodos()
+}
+
+
+
+
+
+
+
+//  ---------------------------------------- aplicar colores y texto a mano
 
 // detectar clicks hechos en los botones
 document.addEventListener("DOMContentLoaded", function() {
@@ -81,7 +130,7 @@ function ponerColor(boton, color){
         boton.style.background = color
     }
 }
-//desactivar escritura   readonly 
+//desactivar escritura 
 function escritura(){
     if (document.getElementById("colorChange").checked) {
 
@@ -111,46 +160,104 @@ function escritura(){
 
 
 
-//generador de tamaño
-function crearDesdePagina() {
-    crearBotones(
-        parseInt(document.getElementById("numeroFilas").value),
-        parseInt(document.getElementById("numeroBotones").value)
-    )
+
+//  ---------------------------------------- generar texto aleatoriamente
+function shuffle(array) {
+    array.sort(() => Math.random() - 0.5);
 }
-
-function crearBotones(nFilas, nBotones) {
-
-    // contenedor en el que se generan los botones
-    var contenedor = document.getElementById("tablero")
-    // reiniciar contenedor
-    contenedor.innerHTML = ''
-
-
-    //----  generar divs de las lineas ----
+function generarTextoDesdeTextarea() {
+    // Acceder al elemento textarea por su ID
+    var textarea = document.getElementById("textareaOpciones");
+    var lineas = textarea.value.split('\n');
+    ponerTexto(lineas)
+}
+function ponerTexto(arrayString){
     
-    //añadir lineas
-    for (var i = 0; i < nFilas; i++) {
-        var linea = document.createElement("div")
-        linea.classList.add("linea")
-        contenedor.appendChild(linea)
-    }
-    
-    //----  generar botones en cada linea ----
-    
-    //array de lineas
+    //sacar datos
     var lineas = document.getElementsByClassName("linea")
+    var botones = lineas[0].querySelectorAll("button")
+    var length2 =  lineas.length * botones.length
 
-    //por cada linea
-    for (var i = 0; i < lineas.length; i++) {
-        //crear tantos botones como el numero de botones
-        for (var j = 0; j < nBotones; j++) {
-            var boton = document.createElement("button")
-            var textarea = document.createElement("textarea")
-            textarea.setAttribute("placeholder", (i+1)+"-"+(j + 1))
-            boton.appendChild(textarea);
-            lineas[i].appendChild(boton)
+    //rellenar array con espacion en blanco
+    if (document.getElementById("freeSpaceCheckbox").checked) {
+        for (let i = arrayString.length; i < length2-1; i++) {
+            arrayString[i] = ""
+        }
+    }else{
+        for (let i = arrayString.length; i < length2; i++) {
+            arrayString[i] = ""
         }
     }
-    ponerBlancoTodos()
+
+    //mezclar array
+    if (document.getElementById("randomCheckbox").checked) {
+        shuffle(arrayString)
+    }
+
+    //colocar en los botones
+    for (var i = 0; i < lineas.length; i++) {
+        botones = lineas[i].querySelectorAll("button")
+        for (var j = 0; j < botones.length; j++) {
+
+            //con freespace
+            if (document.getElementById("freeSpaceCheckbox").checked) {
+                if (i*botones.length+j == (length2/2)-0.5 ) {
+                    botones[j].querySelector("textarea").innerText = "FREE\nSPACE"
+                } else {
+                    if (i*botones.length+j < length2/2 ) {
+                        botones[j].querySelector("textarea").innerText = arrayString[i*botones.length + j]
+                        
+                    } else {
+                        botones[j].querySelector("textarea").innerText = arrayString[i*botones.length + j-1]
+                        
+                    }
+                }
+                
+            //sin freespace
+            } else {
+                botones[j].querySelector("textarea").innerText = arrayString[i*botones.length + j]
+            }
+        }
+    }
 }
+
+
+
+
+
+//  ---------------------------------------- leer archivo
+/*
+document.getElementById('fileInput').addEventListener('change', function(event) {
+    var file = event.target.files[0]; // Obtener el primer archivo seleccionado
+    if (file) {
+
+
+        var reader = new FileReader(); // Crear un objeto FileReader
+        reader.readAsText(file); // Leer el archivo como texto
+
+        reader.onload = function(e) { // Cuando la lectura del archivo esté completa
+
+
+            var contenido = e.target.result; // Obtener el contenido del archivo
+            document.getElementById('contenidoArchivo').textContent = contenido; // Mostrar el contenido en la página
+
+
+            // Filtrar la información de las primeras dos líneas
+            var lineas = contenido.split('\n'); // Dividir el contenido en líneas
+            var primeraLinea = lineas[0].trim(); // Obtener el texto de la primera línea
+            var segundaLinea = lineas[1].trim(); // Obtener el texto de la segunda línea
+
+            crearBotones(
+                parseInt(primeraLinea),
+                parseInt(segundaLinea)
+            )
+
+            
+            // Mostrar la información filtrada en la página
+            var informacion = "Primera línea: " + primeraLinea + "<br>Segunda línea: " + segundaLinea;
+            document.getElementById('informacion').innerHTML = informacion;
+        };
+
+    }
+});
+*/

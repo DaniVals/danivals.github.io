@@ -43,12 +43,30 @@
                 <input type="range" id="colorSelect" min="1" max="5" value="4">
             </div>
             <button id="reset" onclick="ponerBlancoTodos()">reiniciar colores</button>
+            <h3>Gestionar Casillas</h3>
+            <label id="freeSpace" for="freeSpaceCheckbox">
+                <input type="checkbox" id="freeSpaceCheckbox">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M14.078 7.061l2.861 2.862-10.799 10.798-3.584.723.724-3.585 10.798-10.798zm0-2.829l-12.64 12.64-1.438 7.128 7.127-1.438 12.642-12.64-5.691-5.69zm7.105 4.277l2.817-2.82-5.691-5.689-2.816 2.817 5.69 5.692z"/></svg>
+            </label>
+            <label id="random" for="randomCheckbox">
+                <input type="checkbox" id="randomCheckbox">
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0" x2="24" y1="0" y2="24" stroke="white" stroke-width="2"/>
+                    <circle cx="8" cy="8" r="1.5"/>
+                    <circle cx="16" cy="8" r="1.5"/>
+                    <circle cx="12" cy="12" r="1.5"/>
+                    <circle cx="8" cy="16" r="1.5"/>
+                    <circle cx="16" cy="16" r="1.5"/>
+                </svg>
+            </label>
+            <textarea id="textareaOpciones" placeholder="Escribe aqui tus opciones separadas por intros         Cuidado con dejar espacios en blaco entre medias y al final"></textarea>
+            <button id="reset" onclick="generarTextoDesdeTextarea()">Generar tablero</button>
         </div>
 
         <div id="tablero">
             <div class="linea">
                 <button>
-                    <textarea placeholder="Casilla"></textarea>
+                    <textarea placeholder="Casilla 1 (haz click aqui para escribir)"></textarea>
                 </button>
             </div>
         </div>
