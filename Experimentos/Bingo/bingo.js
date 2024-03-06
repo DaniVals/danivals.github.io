@@ -61,6 +61,7 @@ function crearBotones(nFilas, nBotones) {
         }
     }
     ponerBlancoTodos()
+    verificarFreeSpace()
 }
 
 
@@ -171,6 +172,16 @@ function generarTextoDesdeTextarea() {
     var lineas = textarea.value.split('\n');
     ponerTexto(lineas)
 }
+async function verificarFreeSpace() {
+    //sacar datos
+    var lineas = document.getElementsByClassName("linea")
+    var botones = lineas[0].querySelectorAll("button")
+    var length2 =  lineas.length * botones.length
+    
+    if (length2%2==0) {
+        document.getElementById("freeSpaceCheckbox").checked = false
+    }
+}
 function ponerTexto(arrayString){
     
     //sacar datos
@@ -202,7 +213,7 @@ function ponerTexto(arrayString){
             //con freespace
             if (document.getElementById("freeSpaceCheckbox").checked) {
                 if (i*botones.length+j == (length2/2)-0.5 ) {
-                    botones[j].querySelector("textarea").innerText = "FREE\nSPACE"
+                    botones[j].querySelector("textarea").innerText = "FREE SPACE"
                 } else {
                     if (i*botones.length+j < length2/2 ) {
                         botones[j].querySelector("textarea").innerText = arrayString[i*botones.length + j]
@@ -224,40 +235,29 @@ function ponerTexto(arrayString){
 
 
 
-
 //  ---------------------------------------- leer archivo
-/*
-document.getElementById('fileInput').addEventListener('change', function(event) {
-    var file = event.target.files[0]; // Obtener el primer archivo seleccionado
+function leerArchivo() {
+    
+    var file = document.getElementById("fileInput").files[0]; // Obtener el primer archivo seleccionado
     if (file) {
 
+        var reader = new FileReader();
+        reader.readAsText(file);
+        reader.onload = function(e) {
+        
+            // Detectar primeras dos lineas
+            var lineas = e.target.result.split('\n');
+            var primeraLinea = lineas[0].trim();
+            var segundaLinea = lineas[1].trim();
 
-        var reader = new FileReader(); // Crear un objeto FileReader
-        reader.readAsText(file); // Leer el archivo como texto
-
-        reader.onload = function(e) { // Cuando la lectura del archivo esté completa
-
-
-            var contenido = e.target.result; // Obtener el contenido del archivo
-            document.getElementById('contenidoArchivo').textContent = contenido; // Mostrar el contenido en la página
-
-
-            // Filtrar la información de las primeras dos líneas
-            var lineas = contenido.split('\n'); // Dividir el contenido en líneas
-            var primeraLinea = lineas[0].trim(); // Obtener el texto de la primera línea
-            var segundaLinea = lineas[1].trim(); // Obtener el texto de la segunda línea
-
-            crearBotones(
-                parseInt(primeraLinea),
-                parseInt(segundaLinea)
-            )
-
+            // Eliminar las dos primeras líneas
+            lineas.splice(0, 2);
+            let texto = lineas.join('\n');
             
-            // Mostrar la información filtrada en la página
-            var informacion = "Primera línea: " + primeraLinea + "<br>Segunda línea: " + segundaLinea;
-            document.getElementById('informacion').innerHTML = informacion;
+            document.getElementById("numeroFilas").value = parseInt(primeraLinea)
+            document.getElementById("numeroBotones").value = parseInt(segundaLinea)
+            document.getElementById("textareaOpciones").value = texto
         };
-
+        
     }
-});
-*/
+}

@@ -12,7 +12,7 @@ svg{
 
     /* modo claro */
     --LightMode-TXT: #000000;
-    --LightMode-DESC: #777777;
+    --LightMode-DESC: #666;
     --LightMode-BG1: #ffffff;
     --LightMode-BG2: #dddddd;
     --LightMode-BG3: #aaaaaa;
@@ -20,7 +20,7 @@ svg{
 
     /* modo oscuro */
     --DarkMode-TXT: #ffffff;
-    --DarkMode-DESC: #999999;
+    --DarkMode-DESC: #999;
     --DarkMode-BG1: #000000;
     --DarkMode-BG2: #161616;
     --DarkMode-BG3: #333333;
@@ -54,6 +54,10 @@ body{
     background-color: var(--BG3);
     background-image: url('fondo gameboy claro.png');
     transition: var(--CeroCincoSecs) ease;
+}
+.finalRedondeado{
+    border-end-end-radius:   25px;
+    border-end-start-radius: 25px;
 }
 /*
 ================================================= SETTINGS =================================================

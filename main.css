@@ -52,7 +52,7 @@ header .izq .extend *{
 }
 
 
-header .mid{ margin-top: 15px; width: 150%;}
+header .mid{ margin-top: 40px; width: 150%;}
 header .mid h1{    
     text-align: center;
     font-size: 300%;
@@ -65,29 +65,11 @@ header .der{
     display: flex;
     flex-direction: column;
 }
-header .der > div{ 
-    margin-top: 5px; 
-    margin-bottom: 5px; 
-    margin-right: 15px; 
-    width: fit-content;
-}
-header .der svg{ 
-    margin-left: 15px;
-    width: 30px;
-}
-header .der .svgTxt * {
-    text-decoration: none;
-    color: inherit;
-}
-header .der .svgTxt *:hover {
-    text-decoration: underline;
-    color: inherit;
-}
 
 /*
 ================================================= BODY =================================================
 */
-body #lista{
+body .lista{
     background-color: var(--BG2);
     transition: var(--transicion-BG);
     
@@ -103,7 +85,7 @@ body #lista{
     flex-wrap: wrap;
     justify-content: space-around;
 }
-body #lista .juego{
+body .lista .juego{
     background-color: var(--BG4);
     min-width: 300px;
     width: 25%;
@@ -115,7 +97,7 @@ body #lista .juego{
     overflow: hidden;
     position: relative;
 }
-body #lista .juego p{
+body .lista .juego p{
     background: linear-gradient(#00000000,var(--BG4));
     position: absolute;
     top: 80%;
@@ -127,7 +109,7 @@ body #lista .juego p{
     font-weight: bolder;
     font-size: large;
 }
-body #lista .juego img{
+body .lista .juego img{
     height: 100%;
     object-fit: contain;
 }
