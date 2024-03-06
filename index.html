@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ValsiJuegos</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="/Global/Root.css">
+    <script src="main.js"></script>
+    <script src="/Global/Cookies.js"></script>
+</head>
+
+
+
+<!-- Settings (copiar en todas) -->
+<div id="settings">
+    <svg onclick="location.href='/'" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M13 2v-2l10 3v18l-10 3v-2h-9v-7h1v6h8v-18h-8v7h-1v-8h9zm-2.947 10l-3.293-3.293.707-.707 4.5 4.5-4.5 4.5-.707-.707 3.293-3.293h-9.053v-1h9.053z"/></svg>
+    <label class="slideCheck" for="darkMode">
+        <input type="checkbox" id="darkMode" onclick="clickDarkMode()">
+        <div><img id="darkModeIcon" src="/Global/pixel luna.png" alt=""></div>
+    </label>
+    <svg onclick="bajarDivSettings()" id="settingSvg" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m16.843 10.211c.108-.141.157-.3.157-.456 0-.389-.306-.755-.749-.755h-8.501c-.445 0-.75.367-.75.755 0 .157.05.316.159.457 1.203 1.554 3.252 4.199 4.258 5.498.142.184.36.29.592.29.23 0 .449-.107.591-.291 1.002-1.299 3.044-3.945 4.243-5.498z"/></svg>
+</div>
+
+
+
+<header class="finalRedondeado">
+    <div class="izq">
+        <div class="click svgTxt" onclick="expandirDiv('info','infoSvg')">
+            <p>Info</p>
+            <svg id="infoSvg" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m16.843 10.211c.108-.141.157-.3.157-.456 0-.389-.306-.755-.749-.755h-8.501c-.445 0-.75.367-.75.755 0 .157.05.316.159.457 1.203 1.554 3.252 4.199 4.258 5.498.142.184.36.29.592.29.23 0 .449-.107.591-.291 1.002-1.299 3.044-3.945 4.243-5.498z"/></svg>
+        </div>
+        <div class="extend" id="info">
+            <p class="noTrans">Esta es una pagina en la cual hago proyectos y experiemntos sobre el lenguaje de marcas.</p>
+            <p class="noTrans">Puedes hacer click en el icono de github a la derecha para ver el repositorio por si te interesa el codigo fuente.</p>
+        </div>
+    </div>
+    <div class="mid">
+        <h1>Valsi Juegos</h1>
+    </div>
+    <div class="der">
+        <div class="svgTxt">
+            <a href="https://github.com/DaniVals/danivals.github.io">GitHub</a>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        </div>
+        <div class="svgTxt" onclick="copyText('daniel.vals.simon@gmail.com','gmailCopyText')">
+            <p id="gmailCopyText">Gmail</p>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.288 21h-20.576c-.945 0-1.712-.767-1.712-1.712v-13.576c0-.945.767-1.712 1.712-1.712h20.576c.945 0 1.712.767 1.712 1.712v13.576c0 .945-.767 1.712-1.712 1.712zm-10.288-6.086l-9.342-6.483-.02 11.569h18.684v-11.569l-9.322 6.483zm8.869-9.914h-17.789l8.92 6.229s6.252-4.406 8.869-6.229z"/></svg>
+        </div>
+    </div>
+</header>
+
+
+
+
+<body onload="loadMain()">
+    <div class="lista">
+        <h1>Juegos</h1>
+    </div>
+    <div class="lista">
+        <button class="juego" onclick="location.href='/juegos/valsimon_dice/'">
+            <img src="/juegos/valsimon_dice/portada.png" alt="">
+            <p>Valsimon dice</p>
+        </button>
+    </div>
+    <div class="lista">
+        <h1>Experimentos</h1>
+    </div>
+    <div class="lista finalRedondeado">
+        <button class="juego" onclick="location.href='/Experimentos/Bingo/'">
+            <img src="/Experimentos/Bingo/portada.png" alt="">
+            <p>Bingo</p>
+        </button>
+    </div>
+</body>
+</html>
