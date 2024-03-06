@@ -9,9 +9,6 @@ Si quieres usar estas paginas con cualquier proposito, puedes hacerlo, ya sea co
 esto siempre y cuando no se intente la apoderacion de dichos recursos.
 (Basicamente que puedes ver y copiar lo que quieras mientras no digas que lo has hecho tu)
 
-# [valsimon dice](https://danivals.github.io/juegos/valsimon_dice/)
-Una version web de Simon Dice, se puede jugar de forma infinita usando un array y te guarda tu record usando las cookies
-
 # [Bingo generator](https://danivals.github.io/Experimentos/Bingo/)
 Un generador de Bingo que permite crear un tablero con filas y columnas a elejir, 
 escribir en contenido de esas casillas a mano o colocarlas aleatoriamente y 
