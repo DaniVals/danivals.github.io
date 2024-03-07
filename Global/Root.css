@@ -52,7 +52,7 @@ body{
     width: 100%;
     
     background-color: var(--BG3);
-    background-image: url('fondo gameboy claro.png');
+    background-image: url('fondo gameboy oscuro.png');
     transition: var(--CeroCincoSecs) ease;
 }
 .finalRedondeado{
