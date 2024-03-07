@@ -18,14 +18,8 @@ header{
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    
-    width: auto;
-    max-width: 80%;
+
     min-height: 200px;
-    
-    margin-top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
     position: relative;
 }
 header .izq{ margin-top: 15px; margin-left: 15px; justify-self: start; width: 100%;}
@@ -35,6 +29,9 @@ header .izq .click{
     width: fit-content;
     background-color: var(--BG2);
     transition: var(--transicion-BG);
+    
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 }
 header .izq .click svg{
     height: 100%;
@@ -42,10 +39,15 @@ header .izq .click svg{
 }
 header .izq .extend{
     margin-top: 15px;
+    margin-bottom: 15px;
     height: 0px;
     overflow: hidden;
     transition: var(--CeroCincoSecs) ease;
     background-color: var(--BG2);
+
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 header .izq .extend *{
     margin: 5px;
@@ -91,13 +93,6 @@ body .lista{
     background-color: var(--BG2);
     transition: var(--transicion-BG);
     
-    margin-right: 12%;
-    margin-left: 12%;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -105,15 +100,15 @@ body .lista{
 }
 body .lista .juego{
     background-color: var(--BG4);
-    min-width: 300px;
-    width: 25%;
-    height: 200px;
-    margin: 10px;
 
     justify-content: center;
     display: flex;
     overflow: hidden;
     position: relative;
+    
+    width: 300px;
+    height: 200px;
+    margin: 10px;
 }
 body .lista .juego p{
     background: linear-gradient(#00000000,var(--BG4));
@@ -130,4 +125,58 @@ body .lista .juego p{
 body .lista .juego img{
     height: 100%;
     object-fit: contain;
+}
+
+/*tamaño maximo o pc*/
+@media (min-width: 1000px){
+    header{
+        width: 80%;
+        margin-left: 10%;
+    }
+    body .lista{        
+        margin-right: calc(10% + 25px);
+        margin-left: calc(10% + 25px);
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+}
+/*tamaño medio o tablet*/
+@media (min-width:600px) and (max-width: 999px){
+    header{
+        width: calc(100% - 95px);
+        margin-left: 1%;
+    }
+    body .lista{        
+        margin-right: calc(95px + 25px);
+        margin-left: calc(1% + 25px);
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+}
+/*tamaño minimo o movil*/
+@media (max-width: 599px){
+    header{
+        width: calc(100% - 80px);
+        margin-left: 0%;
+        border-end-start-radius:   0px !important;
+        border-end-end-radius:   0px !important;
+    }
+    body .lista{        
+        margin-right: 0%;
+        margin-left:  0%;
+        padding-left: 0%;
+        padding-right:0%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        
+        border-end-start-radius:   0px !important;
+        border-end-end-radius:   0px !important;
+    }
+    body .lista .juego{
+        width: 250px !important;
+    }
 }
