@@ -1,7 +1,7 @@
 :root{
     --black: radial-gradient(ellipse at 90% 110%, #333, #666);
     --white: radial-gradient(ellipse at 90% 110%, #555, #aaa);
-    
+
     --red: radial-gradient(ellipse at 90% 110%, #500, #a00);
     --orange: radial-gradient(ellipse at 90% 110%, #530, #a70);
     --yellow: radial-gradient(ellipse at 90% 110%, #550, #aa0);
@@ -18,15 +18,12 @@ header{
     transition: var(--transicion-BG);
     color: var(--TXT);
 
-    width: 80%;
-    margin-left: 10%;
-
     min-height: 200px;
     margin-top: 0px;
     
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
 }
 header h1{    
     text-align: center;
@@ -43,21 +40,13 @@ header h1{
 
 .rows{
     display: flex;
-    flex-direction: row;
     justify-content: start;
-    
-    margin-top: 20px;
-    margin-bottom: 30px;
-    
-    margin-right: 12%;
-    margin-left: 12%;
 }
 #apartados{
     background-color: var(--BG2);
     transition: var(--transicion-BG);
-    width: 25%;
-    
-    border-end-start-radius: 25px;
+
+    display: flex;
 }
 #apartados #fileInput{ 
     margin-top: 20px;
@@ -208,8 +197,6 @@ header h1{
 #tablero{
     background-color: var(--BG2);
     transition: var(--transicion-BG);
-    width: 75%;
-    margin-left: 15px;
     
     display: flex;
     flex-direction: column;
@@ -254,4 +241,96 @@ header h1{
 #tablero button textarea::placeholder { color: var(--LightMode-DESC);}
 #tablero button ::-webkit-scrollbar{
     height: 0px;
+}
+
+
+/*tamaño maximo o pc*/
+@media (min-width: 1000px){
+    header{
+        width: 80%;
+        margin-left: 10%;
+    }
+    .rows{
+        flex-direction: row;
+        
+        margin-top: 20px;
+        margin-bottom: 30px;
+        
+        margin-right: 12%;
+        margin-left: 12%;
+    }
+    #apartados{
+        width: 25%;
+        
+        border-end-start-radius: 25px;
+    
+        flex-direction: column;
+    }
+    #tablero{
+        width: 75%;
+        margin-left: 15px;
+    }
+}
+/*tamaño medio o tablet*/
+@media (min-width:600px) and (max-width: 999px){
+    header{
+        width: calc(100% - 90px);
+        margin-left: 1%;
+        border-end-start-radius: 0px !important;
+    }
+    .rows{
+        flex-direction: row;
+        
+        margin-top: 10px;
+        margin-bottom: 20px;
+        
+        margin-right: 1%;
+        margin-left: 1%;
+    }
+    #apartados{
+        width: 25%;
+        
+        border-end-start-radius: 25px;
+    
+        flex-direction: column;
+    }
+    #tablero{
+        width: 75%;
+        margin-left: 5px;
+    }
+}
+/*tamaño minimo o movil*/
+@media (max-width: 599px){
+    header{
+        width: calc(100% - 80px);
+        margin-left: 0%;
+        border-end-start-radius:   0px !important;
+    }
+    .rows{
+        flex-direction: column;
+        
+        margin-top: 10px;
+        margin-bottom: 10px;
+        
+        margin-right: 0%;
+        margin-left: 0%;
+    }
+    #apartados{
+        width: 100%;
+        
+        border-end-start-radius: 0px;
+    
+        flex-direction: row;
+    }
+    #apartados > div{
+        width: 100%;
+    }
+    #apartados #numeroFilas,
+    #apartados #numeroBotones{
+        width: 30%;
+    }
+    #tablero{
+        width: 100%;
+        margin-top: 10px;
+    }
 }
