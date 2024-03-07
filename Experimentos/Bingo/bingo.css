@@ -333,4 +333,17 @@ header h1{
         width: 100%;
         margin-top: 10px;
     }
+
+    
+    #colorSelect{
+        appearance: none;
+        width: 100%;
+        background-color: #0000;
+    }
+    #colorChangeIcon{
+        background-color: #0000;
+        display: inline-block;
+        
+        margin-left: calc(50% - 10px);
+    }
 }
