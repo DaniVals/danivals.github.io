@@ -85,13 +85,19 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.documentElement.style.setProperty('--colorSelected', 'var(--red)');
             break;
             case 3:
-                document.documentElement.style.setProperty('--colorSelected', 'var(--yellow)');
+                document.documentElement.style.setProperty('--colorSelected', 'var(--orange)');
             break;
             case 4:
-                document.documentElement.style.setProperty('--colorSelected', 'var(--green)');
+                document.documentElement.style.setProperty('--colorSelected', 'var(--yellow)');
             break;
             case 5:
+                document.documentElement.style.setProperty('--colorSelected', 'var(--green)');
+            break;
+            case 6:
                 document.documentElement.style.setProperty('--colorSelected', 'var(--blue)');
+            break;
+            case 7:
+                document.documentElement.style.setProperty('--colorSelected', 'var(--purple)');
             break;
         }
     });

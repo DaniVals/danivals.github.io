@@ -1,10 +1,13 @@
 :root{
     --black: radial-gradient(ellipse at 90% 110%, #333, #666);
     --white: radial-gradient(ellipse at 90% 110%, #555, #aaa);
+    
     --red: radial-gradient(ellipse at 90% 110%, #500, #a00);
+    --orange: radial-gradient(ellipse at 90% 110%, #530, #a70);
     --yellow: radial-gradient(ellipse at 90% 110%, #550, #aa0);
     --green: radial-gradient(ellipse at 90% 110%, #050, #0a0);
     --blue: radial-gradient(ellipse at 90% 110%, #035, #07a);
+    --purple: radial-gradient(ellipse at 90% 110%, #305, #70a);
 
     --colorSelected: var(--green);
 
