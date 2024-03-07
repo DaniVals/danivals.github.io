@@ -12,7 +12,7 @@ esto siempre y cuando no se intente la apoderacion de dichos recursos.
 # [Bingo generator](https://danivals.github.io/Experimentos/Bingo/)
 Un generador de Bingo que permite crear un tablero con filas y columnas a elejir, 
 escribir en contenido de esas casillas a mano o colocarlas aleatoriamente y 
-colorear las casillas con 4 colores (por ahora) por si se juega por equipos
+colorear las casillas con 6 colores por si se juega por equipos
 
 Tambien permite subir un archivo .txt para poder usar configuraciones consistentes entre varias personas (en la primera linea se pone el numero de filas, en la segunda las columnas y despues las opciones deseadas)
 

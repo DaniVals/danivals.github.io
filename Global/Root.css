@@ -65,7 +65,7 @@ body{
 #settings{
     position: fixed;
     top: 0px;
-    right: 10px;
+    width: 60px;
 
     background-color: var(--BG1);
     border-end-end-radius: 1000px;
@@ -74,7 +74,6 @@ body{
 
     transform: translateY(var(--alturaSettings));
     transition: var(--CeroCincoSecs) ease;
-    width: 60px;
 }
 #settings svg{
     fill: var(--TXT);
@@ -114,4 +113,23 @@ body{
 }
 .slideCheck:has(input:checked) > div{
     transform: translateX(30px);
+}
+
+/*tamaño maximo o pc*/
+@media (min-width: 1000px){
+    #settings{
+        right: 10px;
+    }
+}
+/*tamaño medio o tablet*/
+@media (min-width:600px) and (max-width: 999px){
+    #settings{
+        right: 10px;
+    }
+}
+/*tamaño minimo o movil*/
+@media (max-width: 599px){
+    #settings{
+        right: 0px;
+    }
 }
