@@ -51,7 +51,7 @@ body{
     z-index: -100;
     width: 100%;
     
-    background-color: var(--BG3);
+    background-color: var(--BG4);
     background-image: url('fondo gameboy oscuro.png');
     transition: var(--CeroCincoSecs) ease;
 }
