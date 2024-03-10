@@ -119,15 +119,34 @@ body .lista .juego{
 body .lista .juego p{
     background: linear-gradient(#00000000,var(--DarkMode-BG2));
     color: var(--DarkMode-TXT);
+    font-weight: bolder;
+    font-size: large;
+    
     position: absolute;
     top: 80%;
     bottom: 0%;
     left: 0%;
     right: 0%;
     padding-top: 10px;
-    
+}
+body .lista .juego .record{
+    background: linear-gradient(var(--DarkMode-BG2),#0000);
+    color: var(--DarkMode-TXT);
     font-weight: bolder;
     font-size: large;
+
+    transition: ease var(--CeroCincoSecs);
+    overflow: hidden;
+
+    position: absolute;
+    top: 0%;
+    bottom: 100%;
+    left: -10%;
+    right: -10%;
+}
+body .lista .juego:hover .record{
+    top: 0%;
+    bottom: 80%;
 }
 body .lista .juego img{
     height: 100%;

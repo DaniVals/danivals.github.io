@@ -3,10 +3,20 @@ async function loadMain(){
     if(getCookie('darkMode')=='true'){document.getElementById('darkMode').checked = true}
     else{document.getElementById('darkMode').checked = false}
     refreshDarkMode()
-    flipSvg('infoSvg',-90);
 
+    //dar la vuelta al svg de info
+    flipSvg('infoSvg',-90);
+    
+    
+    //poner records
+    document.getElementById("RecordValsimonDice").innerHTML = (""
+        + " R4: "+checkEmptyText(getCookie("record4"), 0)
+        + " R6: "+checkEmptyText(getCookie("record6"), 0)
+        + " R9: "+checkEmptyText(getCookie("record9"), 0));
+    
     await sleep(1) //esperar 1ms
     
+
     //añadir transiciones a dichas cosas
     document.documentElement.style.setProperty('--CeroCincoSecs', '0.5s');
     console.log("index cargado")
