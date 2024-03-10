@@ -98,8 +98,11 @@ body .lista{
     flex-wrap: wrap;
     justify-content: space-around;
 }
+body .lista h1{
+    transition: none;
+}
 body .lista .juego{
-    background-color: var(--BG4);
+    background-color: var(--DarkMode-BG2);
 
     justify-content: center;
     display: flex;
@@ -109,9 +112,13 @@ body .lista .juego{
     width: 300px;
     height: 200px;
     margin: 10px;
+    
+    border-radius: 10px;
+    border-style: solid;
 }
 body .lista .juego p{
-    background: linear-gradient(#00000000,var(--BG4));
+    background: linear-gradient(#00000000,var(--DarkMode-BG2));
+    color: var(--DarkMode-TXT);
     position: absolute;
     top: 80%;
     bottom: 0%;

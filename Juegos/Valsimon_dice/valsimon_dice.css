@@ -68,6 +68,9 @@ header h1{
     display: flex;
     justify-content: space-around;
 }
+#info p{
+    transition: none;
+}
 .dificult{
     margin-top: 10px;
     margin-bottom: 10px;
@@ -92,12 +95,16 @@ header h1{
     margin-bottom: 10px;
     margin-left:  10%;
     margin-right: 10%;
+
 }
 #botonGrande #blanco{
     width: 100%;
     height: 100%;
-    background: var(--blanco);
 
+    background: var(--blanco);
+    border-radius: 25px;
+    border-style: none;
+    
     color: #0003;
     font-size: 900%;
     font-weight: bolder;
@@ -119,6 +126,9 @@ header h1{
 #botones button{
     width: 100%;
     height: 100%;
+
+    border-radius: 10px;
+    border-style: none;
 }
 
 #botones #rojo{
