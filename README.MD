@@ -1,7 +1,7 @@
 # ValsiJuegos
 Un repositorio publico reservado a mis experimentos con paginas web (mayoritariamente juegos).
 
-Al abrir te saldra una seccion con paginas abiertas al publico y otras que no, en verdad todas estan abiertas, solo que las cerradas seguramente esten sin acabar o no estan pensadas para usarse sino mas bien como experimentos.
+Al abrir te saldra una seccion con paginas abiertas al publico y otras que no, en verdad todas estan abiertas, solo que las cerradas seguramente esten sin acabar o no estan pensadas para usarse sino mas bien como pruebas.
 
 Cada pagina y sus archivos (CSS, JS, subpaginas...) estaran en su propia carpeta menos CSS basicos y el JS de las cookies (para evitar codigo repetido), 
 por lo que se consideran paginas y proyectos INDEPENDIENTES, unidos a traves de un [lobby](https://danivals.github.io/).
@@ -17,7 +17,7 @@ Se permiten 3 dificultades y se comprueba en cual se esta para verificar el nume
 
 Se guarda tu record usando cookies de tu navegador, individualmente para cada dificultad.
 
-## [Bingo generator](https://danivals.github.io/Experimentos/Bingo/)
+## [Bingo generator](https://danivals.github.io/Herramientas/Bingo/)
 Un generador de Bingo que permite crear un tablero con filas y columnas a elejir, 
 escribir en contenido de esas casillas a mano o colocarlas aleatoriamente y 
 colorear las casillas con 6 colores por si se juega por equipos.
