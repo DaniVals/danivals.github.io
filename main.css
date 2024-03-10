@@ -173,8 +173,8 @@ body .lista .juego img{
         border-end-end-radius:   0px !important;
         flex-direction: column;
     }
-    header .izq{ margin-top: 10px; width: 90%;}
-    header .mid{ margin-top: 0px; width: 100%;}
+    header .izq{ margin-top: 0px; width: 90%;  order: 1;}
+    header .mid{ margin-top: 20px; width: 100%;}
     header .der{ 
         margin-top: 10px; 
         margin-left: 10px; 
