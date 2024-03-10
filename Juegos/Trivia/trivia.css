@@ -1,0 +1,143 @@
+:root{
+
+    --columnas: 3;
+}
+
+header{
+    background-color: var(--BG1);
+    transition: var(--transicion-BG);
+    color: var(--TXT);
+
+    min-height: 200px;
+    margin-top: 0px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+header h1{    
+    text-align: center;
+    font-size: 300%;
+}
+
+
+
+
+
+
+
+.respuestas{
+    background-color: var(--BG2);
+    padding-bottom: 20px;
+}
+.preguntas{
+    background-color: var(--BG2);
+    padding-bottom: 20px;
+}
+.preguntas #pregunta{
+    text-align: center;
+}
+
+.opciones{
+    background-color: var(--BG2);
+    padding-bottom: 20px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.opciones button{
+    background-color: var(--BG3);
+    color: var(--TXT);
+    font-size: larger;
+    cursor: pointer;
+
+    border-radius: 5px;
+    border-style: none;
+
+    padding: 5px;
+    min-width: 80%;
+    max-width: 95%;
+}
+
+
+
+
+
+
+
+
+/*tamaño maximo o pc*/
+@media (min-width: 1000px){
+    header{
+        width: 80%;
+        margin-left: 10%;
+    }
+    .respuestas,
+    .preguntas,
+    .opciones{
+        margin-right: calc(10% + 25px);
+        margin-left: calc(10% + 25px);
+    }
+    .opciones{
+        border-end-end-radius: 25px;
+        border-end-start-radius: 25px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/*tamaño medio o tablet*/
+@media (min-width:600px) and (max-width: 999px){
+    header{
+        width: calc(100% - 95px);
+        margin-left: 1%;
+        border-end-start-radius: 0px !important;
+        border-end-end-radius: 0px !important;
+    }
+    .respuestas,
+    .preguntas,
+    .opciones{
+        margin-right: 1%;
+        margin-left: 1%;
+    }
+    .opciones{
+        border-end-end-radius: 25px;
+        border-end-start-radius: 25px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*tamaño minimo o movil*/
+@media (max-width: 599px){
+    header{
+        width: calc(100% - 80px);
+        margin-left: 0%;
+        border-end-start-radius:   0px !important;
+        border-end-end-radius: 0px !important;
+    }
+    .respuestas,
+    .preguntas,
+    .opciones{
+        margin-right: 0%;
+        margin-left: 0%;
+    }
+}
