@@ -1,15 +1,15 @@
 :root{    
-    --Plano-blanco:   #ffffff;
-    --Plano-gris:     #3e3e3e;
-    --Plano-rojo:     #ff0000;
-    --Plano-naranja:  #ff5900;
-    --Plano-amarillo: #eaff00;
-    --Plano-verde:    #00ff0d;
-    --Plano-celeste:  #00fff2;
-    --Plano-azul:     #001eff;
-    --Plano-morado:   #ae00ff;
-    --Plano-rosa:     #d000ff;
-    --Plano-turquesa:   #472306;
+    --Plano-blanco:   #fff;
+    --Plano-gris:     #555;
+    --Plano-rojo:     #f00;
+    --Plano-naranja:  #fa0;
+    --Plano-amarillo: #ff0;
+    --Plano-verde:    #0f0;
+    --Plano-turquesa: #0f7;
+    --Plano-celeste:  #0af;
+    --Plano-azul:     #10f;
+    --Plano-morado:   #a0f;
+    --Plano-rosa:     #f0f;
     
     --Degradado-blanco:   radial-gradient(ellipse at 0% -10%, #fff, #777);
     --Degradado-gris:     radial-gradient(ellipse at 0% -10%, #555, #333);
@@ -33,7 +33,7 @@
     --azul:     var(--Degradado-azul);
     --morado:   var(--Degradado-morado);
     --rosa:     var(--Degradado-rosa);
-    --turquesa:   var(--Degradado-turquesa);
+    --turquesa: var(--Degradado-turquesa);
 
     --columnas: 3;
 }

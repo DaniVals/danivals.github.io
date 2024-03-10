@@ -23,17 +23,17 @@ let nColores = 9;
 let record=0; //cambiar por cookies
 
 let colores = [];
-let indexPulsar;
+let indexPulsar = 0;
 
-let juegoActivo;
-let tocaPulsar;
+let juegoActivo = false;
+let tocaPulsar = false;
 
 async function reiniciar() {
     tocaPulsar = false;
     desactivarPanel();
     juegoActivo = true;     
     colores = [];
-    
+
     document.getElementById("blanco").innerHTML = 0
     
     anadirColor();
@@ -43,8 +43,13 @@ async function reiniciar() {
     tocaPulsar=true;
     activarPanel();
 }
+function formatear() {
+    tocaPulsar = false;
+    juegoActivo = false;
+    activarPanel();
+}
 
-
+// ------------------------------------------------- MAIN
 async function botonPulsado(cP) {
     if (juegoActivo == true) {
         if (tocaPulsar == true) {
@@ -54,7 +59,7 @@ async function botonPulsado(cP) {
             if (colores[indexPulsar] == colorPulsado) {
 
                 //acierta UN color
-                await flashPanel(colorPulsado)
+                flashPanel(colorPulsado)
                 indexPulsar++
 
 
@@ -67,7 +72,7 @@ async function botonPulsado(cP) {
                     //mostrar record
                     if (record < indexPulsar) {
                         record = indexPulsar
-                        document.getElementById("record9").innerHTML = "R: "+record
+                        document.getElementById("record"+nColores).innerHTML = "R: "+record
                     }
 
                     //añadir mas colores y repetir
@@ -93,10 +98,82 @@ async function botonPulsado(cP) {
         }
     }
 }
-
 function anadirColor() {
-    colores[colores.length] = Math.floor(Math.random() * nColores);
+    let checkColor = Math.floor(Math.random() * 9)
+    let coloresDisponibles = [0]
+    if (nColores == 4) {
+        coloresDisponibles = [0,2,3,5]
+    }
+    if (nColores == 6) {
+        coloresDisponibles = [0,1,2,3,5,7]
+    }
+
+    //si no esta al maximo de colores, comprobar 
+    if (nColores < 9) {
+        while (!coloresDisponibles.includes(checkColor)) {
+            checkColor = Math.floor(Math.random() * nColores)
+        }
+    }
+    colores[colores.length] = checkColor;
 }
+
+
+
+
+
+
+
+function confirmacionDificultad() {
+    if (juegoActivo == false) {
+        return true;
+    }else{
+        if (window.confirm("Se reiniciara la partida. ¿Desea continuar?")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+function cambiarDificultad(nBotones) {
+    if (confirmacionDificultad()) {
+            
+        nColores = nBotones;
+        
+        document.documentElement.style.setProperty('--columnas', '1');
+        document.getElementById("rojo"      ).style.display = "none"
+        document.getElementById("naranja"   ).style.display = "none"
+        document.getElementById("amarillo"  ).style.display = "none"
+        document.getElementById("verde"     ).style.display = "none"
+        document.getElementById("turquesa"  ).style.display = "none"
+        document.getElementById("celeste"   ).style.display = "none"
+        document.getElementById("azul"      ).style.display = "none"
+        document.getElementById("morado"    ).style.display = "none"
+        document.getElementById("rosa"      ).style.display = "none"
+        
+        if (4<=nBotones) {
+            document.documentElement.style.setProperty('--columnas', '2');
+            document.getElementById("rojo"      ).style.display = ""
+            document.getElementById("amarillo"  ).style.display = ""
+            document.getElementById("verde"     ).style.display = ""
+            document.getElementById("celeste"   ).style.display = ""
+        }
+        if (6<=nBotones) {
+            document.documentElement.style.setProperty('--columnas', '3');
+            document.getElementById("naranja"   ).style.display = ""
+            document.getElementById("morado"    ).style.display = ""
+        }
+        if (9<=nBotones) {
+            document.getElementById("turquesa"  ).style.display = ""
+            document.getElementById("azul"      ).style.display = ""
+            document.getElementById("rosa"      ).style.display = ""
+        }
+
+        formatear()
+    }
+}
+
+// ------------------------------ MUCHO SWITCH ---- AAAAAAAAAAAAAAAAAA
+
 async function secuenciaBlanco() {
     for (let i = 0; i < colores.length; i++) {
         document.getElementById("blanco").style.background = getComputedStyle(document.documentElement).getPropertyValue('--gris')
@@ -134,11 +211,6 @@ async function secuenciaBlanco() {
     }
     document.getElementById("blanco").style.background = getComputedStyle(document.documentElement).getPropertyValue('--blanco')
 }
-
-
-
-
-
 async function flashPanel(color) {
     switch (color) {
         case 0:
