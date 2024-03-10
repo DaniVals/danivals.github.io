@@ -256,8 +256,8 @@ header h1{
         margin-top: 20px;
         margin-bottom: 30px;
         
-        margin-right: 12%;
-        margin-left: 12%;
+        margin-right: calc(10% + 25px);
+        margin-left: calc(10% + 25px);
     }
     #apartados{
         width: 25%;
@@ -274,7 +274,7 @@ header h1{
 /*tamaño medio o tablet*/
 @media (min-width:600px) and (max-width: 999px){
     header{
-        width: calc(100% - 90px);
+        width: calc(100% - 95px);
         margin-left: 1%;
         border-end-start-radius: 0px !important;
     }
