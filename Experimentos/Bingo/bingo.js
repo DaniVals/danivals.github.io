@@ -56,6 +56,9 @@ function crearBotones(nFilas, nBotones) {
             var boton = document.createElement("button")
             var textarea = document.createElement("textarea")
             textarea.setAttribute("placeholder", (i+1)+"-"+(j + 1))
+            if (document.getElementById("colorChange").checked) {
+                textarea.setAttribute("readonly", true)
+            }
             boton.appendChild(textarea);
             lineas[i].appendChild(boton)
         }
@@ -149,6 +152,7 @@ function escritura(){
                 botones[j].querySelector("textarea").setAttribute("readonly", true)
             }
         }
+        document.documentElement.style.setProperty('--colorFocus', '#0000');
     }else{
 
         var lineas = document.getElementsByClassName("linea")
@@ -159,6 +163,7 @@ function escritura(){
                 botones[j].querySelector("textarea").removeAttribute("readonly")
             }
         }
+        document.documentElement.style.setProperty('--colorFocus', '#0002');
     }
 }
 

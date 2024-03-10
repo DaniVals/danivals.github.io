@@ -10,6 +10,7 @@
     --purple: radial-gradient(ellipse at 90% 110%, #305, #70a);
 
     --colorSelected: var(--green);
+    --colorFocus: #0002;
 
 }
 
@@ -237,8 +238,13 @@ header h1{
     resize: none;
 
     border-width: 0px;
+    border-radius: 15px;
 }
 #tablero button textarea::placeholder { color: var(--LightMode-DESC);}
+#tablero button textarea:focus {
+    outline: none;
+    background-color: var(--colorFocus);
+}
 #tablero button ::-webkit-scrollbar{
     height: 0px;
 }
