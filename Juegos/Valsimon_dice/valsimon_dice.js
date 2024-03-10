@@ -8,6 +8,11 @@ async function loadMain(){
     
     //añadir transiciones a dichas cosas
     document.documentElement.style.setProperty('--CeroCincoSecs', '0.5s');
+    
+    //leer records
+    document.getElementById("record4").innerHTML = "R: "+checkEmptyText(getCookie("record4"), 0)
+    document.getElementById("record6").innerHTML = "R: "+checkEmptyText(getCookie("record6"), 0)
+    document.getElementById("record9").innerHTML = "R: "+checkEmptyText(getCookie("record9"), 0)
     console.log("valsimon dice cargado")
 }
 
@@ -20,7 +25,7 @@ const pausa = 1000;//ms
 const pausaCorta = 200;//ms
 let nColores = 9;
 
-let record=0; //cambiar por cookies
+let record = 0; //cambiar por cookies
 
 let colores = [];
 let indexPulsar = 0;
@@ -35,6 +40,7 @@ async function reiniciar() {
     colores = [];
 
     document.getElementById("blanco").innerHTML = 0
+    record = parseInt(checkEmptyText(getCookie("record"+nColores),0))
     
     anadirColor();
     await secuenciaBlanco();
@@ -72,6 +78,7 @@ async function botonPulsado(cP) {
                     //mostrar record
                     if (record < indexPulsar) {
                         record = indexPulsar
+                        setCookie("record"+nColores, record, 90)
                         document.getElementById("record"+nColores).innerHTML = "R: "+record
                     }
 
@@ -83,6 +90,7 @@ async function botonPulsado(cP) {
                     anadirColor()
                     await secuenciaBlanco()
                     
+                    console.log("panel activado")
                     activarPanel()
                     tocaPulsar = true
                 }
@@ -138,6 +146,7 @@ function cambiarDificultad(nBotones) {
     if (confirmacionDificultad()) {
             
         nColores = nBotones;
+        record=getCookie("record"+nColores)
         
         document.documentElement.style.setProperty('--columnas', '1');
         document.getElementById("rojo"      ).style.display = "none"
@@ -251,7 +260,9 @@ async function flashPanel(color) {
         break;
     }
     await sleep(pausaCorta)
-    activarPanel();
+    if (tocaPulsar==true) {
+        activarPanel();
+    }
 }
 function activarPanel() {
     document.getElementById("rojo").style.background = getComputedStyle(document.documentElement).getPropertyValue('--rojo')

@@ -22,6 +22,12 @@ function getCookie(cname) { //leer cookies
     }
     return "";
 }
+function checkEmptyText(valorComprobar,valorDefault) {
+    if (valorComprobar == "" || valorComprobar == null) {
+        return valorDefault;
+    }
+    return valorComprobar
+}
 /*
 =========================================== SLEEP ===========================================
 */
