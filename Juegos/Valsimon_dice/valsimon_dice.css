@@ -9,19 +9,19 @@
     --Plano-azul:     #001eff;
     --Plano-morado:   #ae00ff;
     --Plano-rosa:     #d000ff;
-    --Plano-marron:   #472306;
+    --Plano-turquesa:   #472306;
     
     --Degradado-blanco:   radial-gradient(ellipse at 0% -10%, #fff, #777);
-    --Degradado-gris:     radial-gradient(ellipse at 0% -10%, #aaa, #333);
+    --Degradado-gris:     radial-gradient(ellipse at 0% -10%, #555, #333);
     --Degradado-rojo:     radial-gradient(ellipse at 0% -10%, #f00, #700);
     --Degradado-naranja:  radial-gradient(ellipse at 0% -10%, #fa0, #730);
     --Degradado-amarillo: radial-gradient(ellipse at 0% -10%, #ff0, #770);
     --Degradado-verde:    radial-gradient(ellipse at 0% -10%, #0f0, #070);
+    --Degradado-turquesa: radial-gradient(ellipse at 0% -10%, #0f7, #07a);
     --Degradado-celeste:  radial-gradient(ellipse at 0% -10%, #0af, #037);
-    --Degradado-azul:     radial-gradient(ellipse at 0% -10%, #00f, #007);
-    --Degradado-morado:   radial-gradient(ellipse at 0% -10%, #a0f, #307);
+    --Degradado-azul:     radial-gradient(ellipse at 0% -10%, #10f, #207);
+    --Degradado-morado:   radial-gradient(ellipse at 0% -10%, #a0f, #507);
     --Degradado-rosa:     radial-gradient(ellipse at 0% -10%, #f0f, #707);
-    --Degradado-marron:   radial-gradient(ellipse at 0% -10%, #a00, #300);
     
     --blanco:   var(--Degradado-blanco);
     --gris:     var(--Degradado-gris);
@@ -33,7 +33,7 @@
     --azul:     var(--Degradado-azul);
     --morado:   var(--Degradado-morado);
     --rosa:     var(--Degradado-rosa);
-    --marron:   var(--Degradado-marron);
+    --turquesa:   var(--Degradado-turquesa);
 
     --columnas: 3;
 }
@@ -97,6 +97,10 @@ header h1{
     width: 100%;
     height: 100%;
     background: var(--blanco);
+
+    color: #0003;
+    font-size: 900%;
+    font-weight: bolder;
 }
 
 
@@ -141,8 +145,8 @@ header h1{
 #botones #rosa{
     background: var(--rosa);
 }
-#botones #marron{
-    background: var(--marron);
+#botones #turquesa{
+    background: var(--turquesa);
 }
 
 
