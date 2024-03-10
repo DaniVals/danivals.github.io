@@ -50,17 +50,19 @@ header h1{
     display: flex;
 }
 #apartados #fileInput{ 
-    margin-top: 20px;
     transition: ease var(--CeroCincoSecs);
     color: var(--TXT);
     background-color: var(--BG4);
+    cursor: pointer;
+
     border-color: var(--BG4);
     border-style: solid;
     
+    margin-top: 20px;
     margin-left: 10%;
+    margin-bottom: 20px;
     width: 80%;
     height: 30px;
-    margin-bottom: 20px;
 }
 #apartados h3{
     text-align: center;
@@ -71,8 +73,10 @@ header h1{
 #apartados #reset,
 #apartados #casillas{
     transition: ease var(--CeroCincoSecs);
-    color: var(--TXT);
     background-color: var(--BG4);
+    color: var(--TXT);
+    cursor: pointer;
+
     border-color: var(--BG4);
     border-style: solid;
     
@@ -96,6 +100,7 @@ header h1{
 }
 #apartados label{
     margin-top: 10px;
+    cursor: pointer;
 }
 
 
@@ -123,13 +128,14 @@ header h1{
     height: 20px;
     border-radius: 50%;
     margin-top: 5px;
-    cursor: pointer; 
+    cursor: auto;
 }
 #colorSettings:has(input:checked) #colorSelect::-webkit-slider-runnable-track {
     background: var(--colorSelected);
 }
 #colorSettings:has(input:checked) #colorSelect::-webkit-slider-thumb {
     background: #333;
+    cursor: pointer;
 }
 
 #colorChangeIcon,
@@ -187,7 +193,6 @@ header h1{
 
     resize: vertical;
     min-height: 100px;
-
 }
 
 
@@ -212,9 +217,7 @@ header h1{
     height: 100%;
     min-height: 100px;
 }
-#tablero button{
-    transition: var(--transicion-BG);
-    
+#tablero button{    
     margin: 5px;
     width: 100%;
     border-width: 0px;
@@ -247,6 +250,10 @@ header h1{
 }
 #tablero button ::-webkit-scrollbar{
     height: 0px;
+}
+.rows:has(#colorSettings input:checked) #tablero button textarea,
+.rows:has(#colorSettings input:checked) #tablero button {
+    cursor: pointer !important;
 }
 
 

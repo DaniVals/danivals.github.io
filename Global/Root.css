@@ -79,6 +79,7 @@ body{
     fill: var(--TXT);
     width: 100%;
     height: auto;
+    cursor: pointer;
 }
 #settings svg:not(#settingSvg) path{
     transform: scale(2);
@@ -91,8 +92,10 @@ body{
 .slideCheck {
     position: relative;
     display: inline-block;
+    
     background-color: var(--BG2);
     transition: var(--transicion-BG);
+    cursor: pointer;
     border-radius: 25px;
     
     width: 60px;

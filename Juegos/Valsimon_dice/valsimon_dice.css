@@ -72,6 +72,8 @@ header h1{
     transition: none;
 }
 .dificult{
+    cursor: pointer;
+    
     margin-top: 10px;
     margin-bottom: 10px;
     text-align: center;
@@ -102,6 +104,7 @@ header h1{
     height: 100%;
 
     background: var(--blanco);
+    cursor: pointer;
     border-radius: 25px;
     border-style: none;
     
@@ -126,6 +129,7 @@ header h1{
 #botones button{
     width: 100%;
     height: 100%;
+    cursor: pointer;
 
     border-radius: 10px;
     border-style: none;
@@ -162,6 +166,8 @@ header h1{
 
 
 
+
+
 /*tamaño maximo o pc*/
 @media (min-width: 1000px){
     header{
@@ -183,12 +189,26 @@ header h1{
         flex-direction: column;
         margin-right: 15px;
     }
+    .dificult{
+        width: 50%;
+        margin-left: 25%;
+    }
     #gameplay{
         width: 75%;
         border-end-end-radius: 25px;
         min-height: 500px;
     }
 }
+
+
+
+
+
+
+
+
+
+
 /*tamaño medio o tablet*/
 @media (min-width:600px) and (max-width: 999px){
     header{
@@ -211,12 +231,28 @@ header h1{
         margin-right: 5px;
         border-end-start-radius: 25px;
     }
+    .dificult{
+        width: 50%;
+        margin-left: 25%;
+    }
     #gameplay{
         width: 75%;
         border-end-end-radius: 25px;
         min-height: 500px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 /*tamaño minimo o movil*/
 @media (max-width: 599px){
     header{
@@ -239,20 +275,19 @@ header h1{
         flex-direction: row;
         margin-bottom: 10px;
     }
-    #gameplay{
-        width: 100%;
-        min-height: 500px;
+    .dificult{
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
     #gameplay{
         width: 100%;
-        min-height: 500px;
     }
 
     /* en movil no funciona por algun motivo, asi q toca darle longitud*/
     #botonGrande button{
-        min-height: 300px;
+        min-height: 200px;
     }
     #botones{
-        min-height: 300px;
+        min-height: 200px;
     }
 }
