@@ -32,16 +32,17 @@
 
 
 <body onload="loadMain()">
-    <div class="respuestas">
+    <div id="respuestas">
     </div>
     <div class="preguntas">
-        <h2 id="pregunta" onclick="cargarPregunta()">PREGUNTA</h2>
+        <h2 id="pregunta" onclick="clickSkip()">PREGUNTA</h2>
+        <p id="autor">Autor</p>
     </div>
     <div class="opciones">
-        <button id="opcionA">fduawvdjhwavbdhjawbdjhawgbiufbagwuiywfgbweuhdgfvhjsdvfuy tswafeyusguyfgseajuyfseuytvfuwyesavhtdcawjdvajwiufabhwiudgauiwdgawuidgawuidgiuawgduiawgd A</button>
-        <button id="opcionB">B</button>
-        <button id="opcionC">C</button>
-        <button id="opcionD">D</button>
+        <button onclick="clickRespuesta('1')" id="opcionA">fduawvdjhwavbdhjawbdjhawgbiufbagwuiywfgbweuhdgfvhjsdvfuy tswafeyusguyfgseajuyfseuytvfuwyesavhtdcawjdvajwiufabhwiudgauiwdgawuidgawuidgiuawgduiawgd A</button>
+        <button onclick="clickRespuesta('2')" id="opcionB">B</button>
+        <button onclick="clickRespuesta('3')" id="opcionC">C</button>
+        <button onclick="clickRespuesta('4')" id="opcionD">D</button>
     </div>
 </body>
 </html>
