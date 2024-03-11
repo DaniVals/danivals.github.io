@@ -32,19 +32,22 @@ let indexPulsar = 0;
 
 let juegoActivo = false;
 let tocaPulsar = false;
+let secuanciaActiva = false;
 
 async function reiniciar() {
     tocaPulsar = false;
     desactivarPanel();
-    juegoActivo = true;     
+    juegoActivo = true;   
+    secuanciaActiva = false;  
     colores = [];
 
     document.getElementById("blanco").innerHTML = 0
+    document.getElementById("blanco").style.background = getComputedStyle(document.documentElement).getPropertyValue('--blanco')
     record = parseInt(checkEmptyText(getCookie("record"+nColores),0))
     
     anadirColor();
     await secuenciaBlanco();
-
+    
     indexPulsar = 0;
     tocaPulsar=true;
     activarPanel();
@@ -52,6 +55,9 @@ async function reiniciar() {
 function formatear() {
     tocaPulsar = false;
     juegoActivo = false;
+    secuanciaActiva = false;
+    document.getElementById("blanco").innerHTML = 0
+    document.getElementById("blanco").style.background = getComputedStyle(document.documentElement).getPropertyValue('--blanco')
     activarPanel();
 }
 
@@ -184,9 +190,15 @@ function cambiarDificultad(nBotones) {
 // ------------------------------ MUCHO SWITCH ---- AAAAAAAAAAAAAAAAAA
 
 async function secuenciaBlanco() {
+    secuanciaActiva = true
     for (let i = 0; i < colores.length; i++) {
+
+
         document.getElementById("blanco").style.background = getComputedStyle(document.documentElement).getPropertyValue('--gris')
+        if (secuanciaActiva == false) {return ;}
         await sleep(pausaCorta)
+        if (secuanciaActiva == false) {return ;}
+
         switch (colores[i]) {
             case 0:
                 document.getElementById("blanco").style.background = getComputedStyle(document.documentElement).getPropertyValue('--rojo')
@@ -216,7 +228,9 @@ async function secuenciaBlanco() {
                 document.getElementById("blanco").style.background = getComputedStyle(document.documentElement).getPropertyValue('--rosa')
             break;
         }
+        if (secuanciaActiva == false) {return ;}
         await sleep(pausa)
+        if (secuanciaActiva == false) {return ;}
     }
     document.getElementById("blanco").style.background = getComputedStyle(document.documentElement).getPropertyValue('--blanco')
 }
