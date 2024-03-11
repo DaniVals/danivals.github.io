@@ -16,26 +16,36 @@ async function loadMain(){
 
 const lector = new FileReader();
 const folderPath = './Preguntas/';
-const archivos = [
-    "Personal femboy.txt",
-    
-    "Culturilla que se invento antes.txt",
-    
-    "Historia descartes.txt",
-
+const archivos = [    
     "BasesDeDatos no es SGBD.txt",
     
-    // -------------------------------------------------------- JUEGOS
-    //FNAF
-    "FNAF duracion noche 1.txt",
-    
-    //Minecraft
-    "Minecraft crafteo espada.txt",
-    "Minecraft mob explota.txt",
+    // -------------------------------------------------------- CULTURILLA
+    "C Historia descartes.txt",
+    "C Historia que se invento antes.txt",
 
-    "Minecraft dimensiones.txt",
+    "C Biologia hamsters domesticos.txt",
     
-    "Minecraft nombre vegeta.txt"
+    "C Cocina ingredientes cosmopolitan.txt",
+
+    "C Internet primer meme.txt",
+    // -------------------------------------------------------- VIDEOJUEGOS
+    //Undertale
+    "V Undertale color amarillo.txt",
+    
+    //Isaac
+    "V Isaac personajes muertos.txt",
+
+    //FNAF
+    "V FNAF duracion noche 1.txt",
+    "V FNAF creador.txt",
+
+    //Minecraft
+    "V Minecraft crafteo espada.txt",
+    "V Minecraft mob explota.txt",
+
+    "V Minecraft dimensiones.txt",
+    
+    "V Minecraft nombre vegeta.txt"
 ];
 let archivosYaUsados = [];
 
@@ -100,7 +110,7 @@ function cargarPregunta() {
             ponerPregunta()
         })
         .catch(error => {
-            console.error("Error al cargar el archivo:", error);
+            console.error("Error al cargar el archivo: "+archivos[pos]+" de posicion: "+pos, error);
         });
     }
 
