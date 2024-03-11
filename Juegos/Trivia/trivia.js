@@ -24,9 +24,18 @@ const archivos = [
     "Historia descartes.txt",
 
     "BasesDeDatos no es SGBD.txt",
+    
+    // -------------------------------------------------------- JUEGOS
+    //FNAF
+    "FNAF duracion noche 1.txt",
+    
+    //Minecraft
+    "Minecraft crafteo espada.txt",
+    "Minecraft mob explota.txt",
 
-    "Minecraft nombre vegeta.txt",
-    "Minecraft crafteo espada.txt"
+    "Minecraft dimensiones.txt",
+    
+    "Minecraft nombre vegeta.txt"
 ];
 let archivosYaUsados = [];
 
