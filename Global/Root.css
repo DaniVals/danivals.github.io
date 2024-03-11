@@ -12,21 +12,25 @@ svg{
 :root{
 
     /* modo claro */
-    --LightMode-TXT: #000000;
+    --LightMode-TXT: #000;
     --LightMode-DESC: #666;
-    --LightMode-BG1: #ffffff;
-    --LightMode-BG2: #dddddd;
-    --LightMode-BG3: #aaaaaa;
-    --LightMode-BG4: #888888;
-
+    --LightMode-BG1: #fff;
+    --LightMode-BG2: #ddd;
+    --LightMode-BG3: #aaa;
+    --LightMode-BG4: #888;
+    --LightMode-BGgreen: #0f3;
+    --LightMode-BGred: #f03;
+    
     /* modo oscuro */
     --DarkMode-TXT: #ffffff;
     --DarkMode-DESC: #999;
-    --DarkMode-BG1: #000000;
+    --DarkMode-BG1: #000;
     --DarkMode-BG2: #161616;
-    --DarkMode-BG3: #333333;
-    --DarkMode-BG4: #555555;
-
+    --DarkMode-BG3: #333;
+    --DarkMode-BG4: #555;
+    --DarkMode-BGgreen: #073;
+    --DarkMode-BGred: #a01;
+    
     /* colores usados */
     --TXT: var(--DarkMode-TXT);
     --DESC: var(--DarkMode-DESC);
@@ -34,11 +38,13 @@ svg{
     --BG2: var(--DarkMode-BG2);
     --BG3: var(--DarkMode-BG3);
     --BG4: var(--DarkMode-BG4);
+    --BGgreen: var(--DarkMode-BGgreen);
+    --BGred: var(--DarkMode-BGred);
 
     /* otros valores */
     --CeroCincoSecs:0.0s;
     --transicion-BG: background-color ease var(--CeroCincoSecs);
-    --alturaSettings: -100px;
+    --alturaSettings: -145px;
 }
 /*
 ================================================= colores globales =================================================
@@ -76,13 +82,13 @@ body{
     transform: translateY(var(--alturaSettings));
     transition: var(--CeroCincoSecs) ease;
 }
-#settings svg{
+#settings > svg{
     fill: var(--TXT);
     width: 100%;
     height: auto;
     cursor: pointer;
 }
-#settings svg:not(#settingSvg) path{
+#settings > svg:not(#settingSvg) path{
     transform: scale(2);
 }
 
@@ -99,6 +105,7 @@ body{
     cursor: pointer;
     border-radius: 25px;
     
+    margin-top: 5px;
     width: 60px;
     height: 30px;
 }
@@ -115,8 +122,28 @@ body{
     background-color: var(--BG1);
     transition: var(--CeroCincoSecs) ease;
 }
+.slideCheck > div svg{
+    margin: 10%;
+    height: 80%;
+    width: 80%;
+    
+
+    overflow: hidden;
+
+    fill: var(--TXT);
+    transition: var(--CeroCincoSecs) ease;
+}
 .slideCheck:has(input:checked) > div{
     transform: translateX(30px);
+}
+
+.slideCheck:has(#audio:checked) #audioOff,
+.slideCheck:has(#audio) #audioOn{
+    display: inline;
+}
+.slideCheck:has(#audio) #audioOff,
+.slideCheck:has(#audio:checked) #audioOn{
+    display: none;
 }
 
 /*tamaño maximo o pc*/
