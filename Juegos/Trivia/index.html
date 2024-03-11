@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia</title>
+    <link rel="icon" href="/Global/iconoPagina.png">
+    
+    <link rel="stylesheet" href="trivia.css">
+    <link rel="stylesheet" href="/Global/Root.css">
+    <script src="trivia.js"></script>
+    <script src="/Global/Cookies.js"></script>
+</head>
+
+<!-- Settings (copiar en todas) -->
+<div id="settings">
+    <svg onclick="location.href='/'" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M13 2v-2l10 3v18l-10 3v-2h-9v-7h1v6h8v-18h-8v7h-1v-8h9zm-2.947 10l-3.293-3.293.707-.707 4.5 4.5-4.5 4.5-.707-.707 3.293-3.293h-9.053v-1h9.053z"/></svg>
+    <label class="slideCheck" for="darkMode">
+        <input type="checkbox" id="darkMode" onclick="clickDarkMode()">
+        <div><img id="darkModeIcon" src="" alt=""></div>
+    </label>
+    <svg onclick="bajarDivSettings()" id="settingSvg" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m16.843 10.211c.108-.141.157-.3.157-.456 0-.389-.306-.755-.749-.755h-8.501c-.445 0-.75.367-.75.755 0 .157.05.316.159.457 1.203 1.554 3.252 4.199 4.258 5.498.142.184.36.29.592.29.23 0 .449-.107.591-.291 1.002-1.299 3.044-3.945 4.243-5.498z"/></svg>
+</div>
+
+
+
+<header class="finalRedondeado">
+    <div id="arb">
+        <h1>Trivia</h1>
+    </div>
+</header>
+
+
+<body onload="loadMain()">
+    <div id="respuestas">
+    </div>
+    <div class="preguntas">
+        <h2 id="pregunta" onclick="clickSkip()">PREGUNTA</h2>
+        <p id="autor">Autor</p>
+    </div>
+    <div class="opciones">
+        <button onclick="clickRespuesta('1')" id="opcionA">fduawvdjhwavbdhjawbdjhawgbiufbagwuiywfgbweuhdgfvhjsdvfuy tswafeyusguyfgseajuyfseuytvfuwyesavhtdcawjdvajwiufabhwiudgauiwdgawuidgawuidgiuawgduiawgd A</button>
+        <button onclick="clickRespuesta('2')" id="opcionB">B</button>
+        <button onclick="clickRespuesta('3')" id="opcionC">C</button>
+        <button onclick="clickRespuesta('4')" id="opcionD">D</button>
+    </div>
+</body>
+</html>
