@@ -18,10 +18,12 @@ const lector = new FileReader();
 const folderPath = './Preguntas/';
 const archivos = [
     "Personal femboy.txt",
+    
+    "Culturilla que se invento antes.txt",
+    
+    "Historia descartes.txt",
 
     "BasesDeDatos no es SGBD.txt",
-
-    "Historia descartes.txt",
 
     "Minecraft nombre vegeta.txt",
     "Minecraft crafteo espada.txt"
@@ -62,7 +64,8 @@ function cargarPregunta() {
             "B) incorrecta",
             "C) incorrecta",
             "D) incorrecta",
-            "1"
+            "1",
+            "Gracias por jugar"
         ]
         ponerPregunta()
     }else{
