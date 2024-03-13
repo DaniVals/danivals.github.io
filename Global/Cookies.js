@@ -66,6 +66,8 @@ function refreshDarkMode(){
         document.documentElement.style.setProperty('--BG2', 'var(--LightMode-BG2)');
         document.documentElement.style.setProperty('--BG3', 'var(--LightMode-BG3)');
         document.documentElement.style.setProperty('--BG4', 'var(--LightMode-BG4)');
+        document.documentElement.style.setProperty('--BGgreen', 'var(--LightMode-BGgreen)');
+        document.documentElement.style.setProperty('--BGred', 'var(--LightMode-BGred)');
         document.body.style.backgroundImage = "url('/Global/fondo gameboy claro.png')"
         document.getElementById('darkModeIcon').src = '/Global/pixel luna.png'
     }else{
@@ -75,7 +77,12 @@ function refreshDarkMode(){
         document.documentElement.style.setProperty('--BG2', 'var(--DarkMode-BG2)');
         document.documentElement.style.setProperty('--BG3', 'var(--DarkMode-BG3)');
         document.documentElement.style.setProperty('--BG4', 'var(--DarkMode-BG4)');
+        document.documentElement.style.setProperty('--BGgreen', 'var(--DarkMode-BGgreen)');
+        document.documentElement.style.setProperty('--BGred', 'var(--DarkMode-BGred)');
         document.body.style.backgroundImage = "url('/Global/fondo gameboy oscuro.png')"
         document.getElementById('darkModeIcon').src = '/Global/pixel sol.png'
     }
+}
+function guardarCookieSonido() {
+    setCookie('audioActivo', document.getElementById('audio').checked, 9999)
 }
