@@ -119,6 +119,7 @@ body .lista .juego{
     
     border-radius: 10px;
     border-style: solid;
+    border-color: var(--BG1);
 }
 body .lista .juego p{
     background: linear-gradient(#00000000,var(--DarkMode-BG2));
