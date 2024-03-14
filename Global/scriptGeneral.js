@@ -41,6 +41,9 @@ function flipSvg(svg, giro) {
     let flipp = document.getElementById(svg);
     flipp.setAttribute("transform", "rotate(" + giro + ")");
 }
+function shuffle(array) {
+    array.sort(() => Math.random() - 0.5);
+}
 /*
 =========================================== START ===========================================
 */

@@ -41,6 +41,17 @@
 
 <body onload="loadMain()">
     <div id="ajustes">
+
+        <div id="categoryDiv">
+            <label for="categorySelect">Categorias</label>
+            <select name="categoria" id="categorySelect" multiple>
+                <option value="all" selected>All</option>
+                <option value="videojuegos">Videojuegos</option>
+                <option value="culturilla">Culturilla</option>
+            </select>
+            <button onclick="reiniciar()">Generar Preguntas</button>
+        </div>
+
         <audio id="audioAcierto" controls>
             <source src="/Global/sonido acierto.mp3" type="audio/mpeg">
         </audio>
@@ -51,8 +62,8 @@
     <div id="respuestas">
     </div>
     <div class="preguntas">
-        <h2 id="pregunta" onclick="clickSkip()">PREGUNTA</h2>
-        <p id="autor">Autor</p>
+        <h2 id="pregunta" onclick="clickSkip()">Trivia</h2>
+        <p id="autor">Hecho por Daniel Vals Simon</p>
     </div>
     <div class="opciones">
         <button onclick="clickRespuesta('1')" id="opcionA">fduawvdjhwavbdhjawbdjhawgbiufbagwuiywfgbweuhdgfvhjsdvfuy tswafeyusguyfgseajuyfseuytvfuwyesavhtdcawjdvajwiufabhwiudgauiwdgawuidgawuidgiuawgduiawgd A</button>

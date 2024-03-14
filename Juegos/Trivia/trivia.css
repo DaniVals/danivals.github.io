@@ -12,6 +12,50 @@
     transition: var(--transicion-BG);
     min-height: 0px;
 }
+
+
+#categoryDiv{
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+#categoryDiv label{
+    margin-left: 35px;
+    margin-top: 10px;
+}
+#categoryDiv button{
+    width: 150px;
+    margin-top: 10px;
+
+    background-color: var(--BG3);
+    transition: var(--CeroCincoSecs);
+    color: var(--TXT);
+    border: solid var(--BG3) 5px;
+}
+#categorySelect{
+    background-color: var(--BG3);
+    transition: var(--CeroCincoSecs);
+    color: var(--TXT);
+
+    border: solid var(--BG1) 2px;
+    border-radius: 5px;
+    height: 30px;
+    width: 150px;
+}
+#categorySelect:hover{
+    height: 100px;
+}
+#categorySelect option:checked{
+    background-color: var(--BG2);
+    transition: var(--CeroCincoSecs);
+    color: var(--TXT);
+}
+#categoryDiv ::-webkit-scrollbar{
+    width: 0px;
+}
+
+
+
 #audioFallo,
 #audioAcierto{
     display: none;

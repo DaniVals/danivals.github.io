@@ -4,46 +4,49 @@ async function loadMain(){
     await sleep(1)
     document.documentElement.style.setProperty('--CeroCincoSecs', '0.5s');
 
-    cargarPregunta()
-
     console.log("trivia cargado")
 }
 
 const pausa = 500;//ms
 const folderPath = './Preguntas/';
-const archivos = [    
-    "BasesDeDatos no es SGBD.txt",
+const archivos = [
+    ["BasesDeDatos no es SGBD.txt",""],
     
+
+
     // -------------------------------------------------------- CULTURILLA
-    "C Historia descartes.txt",
-    "C Historia que se invento antes.txt",
-
-    "C Biologia hamsters domesticos.txt",
+    ["C Historia descartes.txt","culturilla"],
+    ["C Historia que se invento antes.txt","culturilla"],
     
-    "C Cocina ingredientes cosmopolitan.txt",
+    ["C Biologia hamsters domesticos.txt","culturilla"],
 
-    "C Internet primer meme.txt",
+    ["C Cocina ingredientes cosmopolitan.txt","culturilla"],
+    
+    ["C Internet primer meme.txt","culturilla"],
+
+
+
     // -------------------------------------------------------- VIDEOJUEGOS
     //Undertale
-    "V Undertale color amarillo.txt",
+    ["V Undertale color amarillo.txt","videojuegos"],
     
     //Isaac
-    "V Isaac personajes muertos.txt",
-
-    //FNAF
-    "V FNAF duracion noche 1.txt",
-    "V FNAF creador.txt",
-
-    //Minecraft
-    "V Minecraft crafteo espada.txt",
-    "V Minecraft mob explota.txt",
-
-    "V Minecraft dimensiones.txt",
+    ["V Isaac personajes muertos.txt","videojuegos"],
     
-    "V Minecraft nombre vegeta.txt"
+    //FNAF
+    ["V FNAF duracion noche 1.txt","videojuegos"],
+    ["V FNAF creador.txt","videojuegos"],
+    
+    //Minecraft
+    ["V Minecraft crafteo espada.txt","videojuegos"],
+    ["V Minecraft mob explota.txt","videojuegos"],
+    ["V Minecraft dimensiones.txt","videojuegos"],
+    
+    ["V Minecraft nombre vegeta.txt","videojuegos"],
 ];
 
 let archivosYaUsados = [];
+let archivosParaUsar = [];
 let pregunta = []; // se tiene que dejar fuera para poder guardar cual es la opcion correcta
 
 /* ------- Esquema del archivo de pregunta -------
@@ -56,7 +59,57 @@ let pregunta = []; // se tiene que dejar fuera para poder guardar cual es la opc
     autor
 */
 
-let posibleClick = true;
+let posibleClick = false;
+
+// ------------------------------------------- crear array de preguntas
+function reiniciar() {
+
+    
+    let opciones = document.getElementById("categorySelect").selectedOptions
+    if (opciones.length < 1) {
+        return; //gestionar aviso de que no se ha seleccionado ninguna
+    }
+    
+    if (0 < archivosParaUsar.length) {
+        if (!window.confirm("Se reiniciara la partida. ¿Desea continuar?")) {
+            return;
+        }
+    }
+    document.getElementById("respuestas").innerHTML = ""
+
+    
+    //generar nuevo array
+    let contador = 0;
+    archivosParaUsar = [];
+    archivosYaUsados = [];
+
+    if (opciones[0].value.indexOf('all') != -1) {
+        for (let j = 0; j < archivos.length; j++) {
+            archivosParaUsar[j] = archivos[j][0];
+        }
+
+    }else{
+        for (let i = 0; i < opciones.length; i++) {
+            for (let j = 0; j < archivos.length; j++) {
+                if (archivos[j][1].indexOf(opciones[i].value) != -1) {
+                    archivosParaUsar[contador] = archivos[j][0];
+                    contador++;
+                }
+            }
+        }
+    }
+    
+    shuffle(archivosParaUsar);
+    cargarPregunta();
+}
+
+
+
+
+
+
+
+
 
 // ------------------------------------------- mostrar preguntas por pantalla
 function ponerPregunta() {
@@ -65,28 +118,29 @@ function ponerPregunta() {
     document.getElementById("opcionB").innerHTML = pregunta[2]
     document.getElementById("opcionC").innerHTML = pregunta[3]
     document.getElementById("opcionD").innerHTML = pregunta[4]
-    document.getElementById("autor").innerHTML = pregunta[6]
+    document.getElementById("autor").innerHTML = "Pregunta hecha por: "+pregunta[6]
 }
 function cargarPregunta() {
     
     let pos = generarNumero()
 
     if (pos < 0) {
-        
+        //si no quedan preguntas en la categoria
         pregunta = [
             "No quedan mas preguntas XC",
-            "A) correcta",
-            "B) incorrecta",
-            "C) incorrecta",
-            "D) incorrecta",
-            "1",
+            "Diseñado y programado por Daniel Vals Simon (videosboy)",
+            "Muchas gracias a Alex Mayo por ayudarme con el CSS, mi maravilloso novio",
+            "...",
+            "ʸ ᵘⁿ ᵖᵒᶜᵒ ᵃ ᶜʰᵃᵗᴳᴾᵀ ʸ ᵃ ᵗᵘᵗᵒʳᶦᵃˡᵉˢ ᵈᵉ ʸᵗ ᵖᵃʳᵃ ᵉˡ ʲˢ",
+            "3",
             "Gracias por jugar"
         ]
         ponerPregunta()
-    }else{
 
+        
+    }else{
         //si da una pregunta valida
-        fetch(folderPath+archivos[pos])
+        fetch(folderPath+archivosParaUsar[pos])
         .then(response => {
             if (!response.ok) {
                 throw new Error('Error al obtener el archivo');
@@ -100,41 +154,45 @@ function cargarPregunta() {
             pregunta = data.split('\n');
 
             //añadir la pregunta a preguntas usadas
-            archivosYaUsados[archivosYaUsados.length] = archivos[pos]
+            archivosYaUsados[archivosYaUsados.length] = archivosParaUsar[pos]
 
-            //mostrar opciones tras cargar pregunta
+            //mostrar opciones tras cargar pregunta y activar el click
             ponerPregunta()
+            posibleClick = true
         })
         .catch(error => {
-            console.error("Error al cargar el archivo: "+archivos[pos]+" de posicion: "+pos, error);
+            console.error("Error al cargar el archivo: "+archivosParaUsar[pos]+" de posicion: "+pos, error);
         });
     }
-
-
 }
 function generarNumero() {
-    
-    //posible setting para preguntas repetidas
-    if (false) {
-        return Math.floor(Math.random() * archivos.length)
-    } else {
-        
-        //si ya no quedan preguntas, devolver -1
-        if (archivos.length == archivosYaUsados.length) {
-            return -1;
-        }
-    
-        let num = Math.floor(Math.random() * archivos.length)
-        while (archivosYaUsados.includes(archivos[num])) {
-            num = Math.floor(Math.random() * archivos.length)
-        }
-    
-        return num;
+
+    console.log(archivosParaUsar.length )
+    console.log(archivosYaUsados.length )
+    //si ya no quedan preguntas, devolver -1
+    if (archivosParaUsar.length == archivosYaUsados.length) {
+        return -1;
     }
+
+    for (let i = 0; i < archivosParaUsar.length; i++) {
+        if (archivosYaUsados.includes(archivosParaUsar[i]) == false) {
+            return i;
+        }
+    }
+
 }
 
-// ------------------------------------------- mostrar preguntas por pantalla
 
+
+
+
+
+
+
+
+
+
+// ------------------------------------------- RESPONDER
 async function clickRespuesta(num) {
     if (posibleClick == true) {
         posibleClick = false
@@ -166,7 +224,6 @@ async function clickRespuesta(num) {
         }
         await sleep(pausa)
         cargarPregunta()
-        posibleClick = true
     }
 }
 async function clickSkip() {
@@ -183,7 +240,6 @@ async function clickSkip() {
         ponerIcono("0")
         await sleep(pausa)
         cargarPregunta()
-        posibleClick = true
     }
 }
 function colorRojo(num) {

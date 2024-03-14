@@ -170,9 +170,6 @@ function escritura(){
 
 
 //  ---------------------------------------- generar texto aleatoriamente
-function shuffle(array) {
-    array.sort(() => Math.random() - 0.5);
-}
 function generarTextoDesdeTextarea() {
     // Acceder al elemento textarea por su ID
     var textarea = document.getElementById("textareaOpciones");
