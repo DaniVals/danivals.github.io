@@ -1,14 +1,6 @@
 async function loadMain(){
-    //paso 1 hacer cosas que no quieras con transicion
-    if(getCookie('darkMode')=='true'){document.getElementById('darkMode').checked = true}
-    else{document.getElementById('darkMode').checked = false}
-    if(getCookie('audioActivo')=='false'){document.getElementById('audio').checked = false}
-    else{document.getElementById('audio').checked = true}
-    refreshDarkMode()
-
-    await sleep(1) //esperar 1ms
-    
-    //añadir transiciones a dichas cosas
+    cargarCookiesSettings()
+    await sleep(1)
     document.documentElement.style.setProperty('--CeroCincoSecs', '0.5s');
     
     //leer records

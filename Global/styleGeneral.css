@@ -47,7 +47,7 @@ svg{
     --alturaSettings: -145px;
 }
 /*
-================================================= colores globales =================================================
+================================================= aspectos globales =================================================
 */
 body{
     
@@ -65,6 +65,25 @@ body{
 .finalRedondeado{
     border-end-end-radius:   25px;
     border-end-start-radius: 25px;
+}
+
+
+header{
+    background-color: var(--BG1);
+    transition: var(--transicion-BG);
+    color: var(--TXT);
+    fill: var(--TXT);
+
+    min-height: 200px;
+    margin-top: 0px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+header h1{    
+    text-align: center;
+    font-size: 300%;
 }
 /*
 ================================================= SETTINGS =================================================
@@ -146,20 +165,39 @@ body{
     display: none;
 }
 
-/*tamaño maximo o pc*/
+/*------------------------------------------------------------------------tamaño maximo o pc*/
 @media (min-width: 1000px){
+    header{
+        width: 80%;
+        margin-left: 10%;
+        border-end-start-radius: 25px;
+        border-end-end-radius:   25px;
+    }
     #settings{
         right: 10px;
     }
 }
-/*tamaño medio o tablet*/
+
+
+/*------------------------------------------------------------------------tamaño medio o tablet*/
 @media (min-width:600px) and (max-width: 999px){
+    header{
+        width: calc(100% - 95px);
+        margin-left: 1%;
+        border-end-end-radius:   25px;
+    }
     #settings{
         right: 10px;
     }
 }
-/*tamaño minimo o movil*/
+
+
+/*------------------------------------------------------------------------tamaño minimo o movil*/
 @media (max-width: 599px){
+    header{
+        width: calc(100% - 80px);
+        margin-left: 0%;
+    }
     #settings{
         right: 0px;
     }

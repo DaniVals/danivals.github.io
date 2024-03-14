@@ -38,22 +38,6 @@
     --columnas: 3;
 }
 
-header{
-    background-color: var(--BG1);
-    transition: var(--transicion-BG);
-    color: var(--TXT);
-
-    min-height: 200px;
-    margin-top: 0px;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-header h1{    
-    text-align: center;
-    font-size: 300%;
-}
 
 .rows{
     display: flex;

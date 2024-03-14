@@ -42,6 +42,16 @@ function flipSvg(svg, giro) {
     flipp.setAttribute("transform", "rotate(" + giro + ")");
 }
 /*
+=========================================== START ===========================================
+*/
+function cargarCookiesSettings(){
+    if(getCookie('darkMode')=='true'){document.getElementById('darkMode').checked = true}
+    else{document.getElementById('darkMode').checked = false}
+    if(getCookie('audioActivo')=='false'){document.getElementById('audio').checked = false}
+    else{document.getElementById('audio').checked = true}
+    refreshDarkMode()
+}
+/*
 =========================================== SETTINGS ===========================================
 */
 function bajarDivSettings() {

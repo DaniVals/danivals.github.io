@@ -2,24 +2,6 @@
     --TiempoTransicionBotones: 0.0s;
 }
 
-header{
-    background-color: var(--BG1);
-    transition: var(--transicion-BG);
-    color: var(--TXT);
-
-    min-height: 200px;
-    margin-top: 0px;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-header h1{    
-    text-align: center;
-    font-size: 300%;
-}
-
-
 
 
 
@@ -109,10 +91,6 @@ header h1{
 
 /*tamaño maximo o pc*/
 @media (min-width: 1000px){
-    header{
-        width: 80%;
-        margin-left: 10%;
-    }
     #ajustes,
     #respuestas,
     .preguntas,
@@ -138,10 +116,11 @@ header h1{
 /*tamaño medio o tablet*/
 @media (min-width:600px) and (max-width: 999px){
     header{
-        width: calc(100% - 95px);
-        margin-left: 1%;
         border-end-start-radius: 0px !important;
         border-end-end-radius: 0px !important;
+    }
+    #respuestas{
+        border-start-end-radius: 25px;
     }
     #ajustes,
     #respuestas,
@@ -170,8 +149,6 @@ header h1{
 /*tamaño minimo o movil*/
 @media (max-width: 599px){
     header{
-        width: calc(100% - 80px);
-        margin-left: 0%;
         border-end-start-radius:   0px !important;
         border-end-end-radius: 0px !important;
     }
