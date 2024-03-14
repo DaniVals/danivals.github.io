@@ -63,7 +63,7 @@ function bajarDivSettings() {
         document.documentElement.style.setProperty('--alturaSettings', '0px');
         flipSvg('settingSvg',180);
     }else{
-        document.documentElement.style.setProperty('--alturaSettings', '-100px');
+        document.documentElement.style.setProperty('--alturaSettings', '-145px');
         flipSvg('settingSvg',0);
     }
 }
