@@ -10,7 +10,7 @@ Si quieres usar estas paginas con cualquier proposito, puedes hacerlo, ya sea co
 esto siempre y cuando no se intente la apoderacion de dichos recursos
 (Basicamente que puedes ver y copiar lo que quieras mientras no digas que lo has hecho tu).
 
-## [valsimon dice](https://danivals.github.io/juegos/valsimon_dice/)
+## [valsimon dice](https://danivals.github.io/Juegos/Valsimon_dice/)
 Una version web de Simon Dice, se puede jugar de forma infinita usando un array que se genera de forma aleatoria.
 
 Se permiten 3 dificultades y se comprueba en cual se esta para verificar el numero aleatorio.
@@ -25,3 +25,10 @@ colorear las casillas con 6 colores por si se juega por equipos.
 Tambien permite subir un archivo .txt para poder usar configuraciones consistentes entre varias personas (en la primera linea se pone el numero de filas, en la segunda las columnas y despues las opciones deseadas).
 
 La opcion de dado coloca las casillas aleatoriamente en vez de en orden, y la de free space añade un hueco vacio en el medio SOLO si el tablero tiene una casilla intermedia clara (3x3, 5x5, 7x7, etc).
+
+## [Trivia](https://danivals.github.io/Juegos/Trivia/)
+Un trivia que utiliza archivos txt para almacenar las preguntas 
+
+Usando arrays para las categorias y una etiqueta 'select' para seleccionarlas
+
+Tambien hace de uso de sonidos .mp3 para indicar cuando aciertas y cuando no
