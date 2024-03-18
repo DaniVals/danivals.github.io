@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valsimon dice</title>
+    <title>Reflejos</title>
     <link rel="icon" href="/Global/iconoPagina.png">
     
-    <link rel="stylesheet" href="valsimon_dice.css">
-    <script src="valsimon_dice.js"></script>
+    <link rel="stylesheet" href="reflejos.css">
+    <script src="reflejos.js"></script>
     
     <link rel="stylesheet" href="/Global/styleGeneral.css">
     <script src="/Global/scriptGeneral.js"></script>
@@ -34,39 +34,24 @@
 
 <header>
     <div id="arb">
-        <h1>Valsimon Dice</h1>
+        <h1>Reflejos</h1>
     </div>
 </header>
 <body onload="loadMain()">
     <div class="rows">
         <div id="info">
-            <div class="dificult" onclick="cambiarDificultad(4)">
-                <p>4 colores</p>
-                <p id="record4">R: 0</p>
-            </div>
-            <div class="dificult" onclick="cambiarDificultad(6)">
-                <p>6 colores</p>
-                <p id="record6">R: 0</p>
-            </div>
-            <div class="dificult" onclick="cambiarDificultad(9)">
-                <p>9 colores</p>
-                <p id="record9">R: 0</p>
+            <div id="explicacion">
+                <p>En este minijuego tendras que buscar la opcion que tenga escrito lo pedido</p>
+                <p>Por ejemplo si se pide el verde, tendras que hacer click en la opcion que tenga verde escrito, ignorando si el fondo es verde o si el texto es de color verde</p>
             </div>
         </div>
         <div id="gameplay">
-            <div id="botonGrande">
-                <button onclick="reiniciar()" id="blanco">0</button>
-            </div>
+            <h2>Empezar Test</h2>
             <div id="botones">
-                    <button onclick="botonPulsado('0')" id="rojo"></button>
-                    <button onclick="botonPulsado('1')" id="naranja"></button>
-                    <button onclick="botonPulsado('2')" id="amarillo"></button>
-                    <button onclick="botonPulsado('3')" id="verde"></button>
-                    <button onclick="botonPulsado('4')" id="turquesa"></button>
-                    <button onclick="botonPulsado('5')" id="celeste"></button>
-                    <button onclick="botonPulsado('6')" id="azul"></button>
-                    <button onclick="botonPulsado('7')" id="morado"></button>
-                    <button onclick="botonPulsado('8')" id="rosa"></button>
+                    <button onclick="botonPulsado('0')" id="opcion1"></button>
+                    <button onclick="botonPulsado('1')" id="opcion2"></button>
+                    <button onclick="botonPulsado('2')" id="opcion3"></button>
+                    <button onclick="botonPulsado('3')" id="opcion4"></button>
             </div>
         </div>
     </div>

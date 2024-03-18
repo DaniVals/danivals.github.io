@@ -62,11 +62,6 @@ body{
     background-image: url('fondo gameboy oscuro.png');
     transition: var(--CeroCincoSecs) ease;
 }
-.finalRedondeado{
-    border-end-end-radius:   25px;
-    border-end-start-radius: 25px;
-}
-
 
 header{
     background-color: var(--BG1);
@@ -84,6 +79,15 @@ header{
 header h1{    
     text-align: center;
     font-size: 300%;
+}
+
+
+.finalRedondeado{
+    border-end-end-radius:   25px;
+    border-end-start-radius: 25px;
+}
+.esconder{
+    display: none;
 }
 /*
 ================================================= SETTINGS =================================================
