@@ -15,14 +15,14 @@ const archivos = [
 
 
     // -------------------------------------------------------- CULTURILLA
-    ["C Historia descartes.txt","culturilla"],
-    ["C Historia que se invento antes.txt","culturilla"],
+    ["C Historia descartes.txt","culturilla historia"],
+    ["C Historia que se invento antes.txt","culturilla historia"],
     
     ["C Biologia hamsters domesticos.txt","culturilla"],
 
     ["C Cocina ingredientes cosmopolitan.txt","culturilla"],
     
-    ["C Internet primer meme.txt","culturilla"],
+    ["C Internet primer meme.txt","culturilla historia"],
 
 
 
@@ -89,11 +89,12 @@ function reiniciar() {
         }
 
     }else{
-        for (let i = 0; i < opciones.length; i++) {
-            for (let j = 0; j < archivos.length; j++) {
-                if (archivos[j][1].indexOf(opciones[i].value) != -1) {
-                    archivosParaUsar[contador] = archivos[j][0];
+        for (let i = 0; i < archivos.length; i++) {
+            for (let j = 0; j < opciones.length; j++) {
+                if (archivos[i][1].indexOf(opciones[j].value) != -1) {
+                    archivosParaUsar[contador] = archivos[i][0];
                     contador++;
+                    break;
                 }
             }
         }
