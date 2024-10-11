@@ -1,0 +1,7 @@
+¿Cuál de estos NO es un SGBD?
+MariaDB
+MySQL
+MangoDB
+Cassandra
+3
+Nvr

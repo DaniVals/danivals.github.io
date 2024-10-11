@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /Global/
+Allow: /
+Allow: /Juegos/Valsimon_dice/
+Allow: /Experimentos/Bingo/
