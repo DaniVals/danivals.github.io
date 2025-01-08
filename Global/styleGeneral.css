@@ -1,0 +1,204 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+p:not(.noTrans), h1, a{
+    transition: color ease var(--CeroCincoSecs);
+}
+svg{
+    transition: fill ease var(--CeroCincoSecs);
+}
+:root{
+
+    /* modo claro */
+    --LightMode-TXT: #000;
+    --LightMode-DESC: #666;
+    --LightMode-BG1: #fff;
+    --LightMode-BG2: #ddd;
+    --LightMode-BG3: #aaa;
+    --LightMode-BG4: #888;
+    --LightMode-BGgreen: #0f3;
+    --LightMode-BGred: #f03;
+    
+    /* modo oscuro */
+    --DarkMode-TXT: #ffffff;
+    --DarkMode-DESC: #999;
+    --DarkMode-BG1: #000;
+    --DarkMode-BG2: #161616;
+    --DarkMode-BG3: #333;
+    --DarkMode-BG4: #555;
+    --DarkMode-BGgreen: #073;
+    --DarkMode-BGred: #a01;
+    
+    /* colores usados */
+    --TXT: var(--DarkMode-TXT);
+    --DESC: var(--DarkMode-DESC);
+    --BG1: var(--DarkMode-BG1);
+    --BG2: var(--DarkMode-BG2);
+    --BG3: var(--DarkMode-BG3);
+    --BG4: var(--DarkMode-BG4);
+    --BGgreen: var(--DarkMode-BGgreen);
+    --BGred: var(--DarkMode-BGred);
+
+    /* otros valores */
+    --CeroCincoSecs:0.0s;
+    --transicion-BG: background-color ease var(--CeroCincoSecs);
+    --alturaSettings: -145px;
+}
+/*
+================================================= aspectos globales =================================================
+*/
+body{
+    
+    color: var(--TXT);
+    background-repeat: repeat;
+    background-size: auto;
+    background-attachment: fixed;
+    z-index: -100;
+    width: 100%;
+    
+    background-color: var(--BG4);
+    background-image: url('fondo gameboy oscuro.png');
+    transition: var(--CeroCincoSecs) ease;
+}
+.finalRedondeado{
+    border-end-end-radius:   25px;
+    border-end-start-radius: 25px;
+}
+
+
+header{
+    background-color: var(--BG1);
+    transition: var(--transicion-BG);
+    color: var(--TXT);
+    fill: var(--TXT);
+
+    min-height: 200px;
+    margin-top: 0px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+header h1{    
+    text-align: center;
+    font-size: 300%;
+}
+/*
+================================================= SETTINGS =================================================
+*/
+#settings{
+    position: fixed;
+    top: 0px;
+    width: 60px;
+
+    background-color: var(--BG1);
+    border-end-end-radius: 1000px;
+    border-end-start-radius: 1000px;
+    padding: 5px;
+
+    transform: translateY(var(--alturaSettings));
+    transition: var(--CeroCincoSecs) ease;
+}
+#settings > svg{
+    fill: var(--TXT);
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+#settings > svg:not(#settingSvg) path{
+    transform: scale(2);
+}
+
+/* slideCheck */
+.slideCheck input{
+    display: none;
+}
+.slideCheck {
+    position: relative;
+    display: inline-block;
+    
+    background-color: var(--BG2);
+    transition: var(--transicion-BG);
+    cursor: pointer;
+    border-radius: 25px;
+    
+    margin-top: 5px;
+    width: 60px;
+    height: 30px;
+}
+.slideCheck > div{
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-left: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+
+    overflow: hidden;
+
+    background-color: var(--BG1);
+    transition: var(--CeroCincoSecs) ease;
+}
+.slideCheck > div svg{
+    margin: 10%;
+    height: 80%;
+    width: 80%;
+    
+
+    overflow: hidden;
+
+    fill: var(--TXT);
+    transition: var(--CeroCincoSecs) ease;
+}
+.slideCheck:has(input:checked) > div{
+    transform: translateX(30px);
+}
+
+.slideCheck:has(#audio:checked) #audioOff,
+.slideCheck:has(#audio) #audioOn{
+    display: inline;
+}
+.slideCheck:has(#audio) #audioOff,
+.slideCheck:has(#audio:checked) #audioOn{
+    display: none;
+}
+
+/*------------------------------------------------------------------------tamaño maximo o pc*/
+@media (min-width: 1000px){
+    header{
+        width: 80%;
+        margin-left: 10%;
+        border-end-start-radius: 25px;
+        border-end-end-radius:   25px;
+    }
+    #settings{
+        right: 10px;
+    }
+}
+
+
+/*------------------------------------------------------------------------tamaño medio o tablet*/
+@media (min-width:600px) and (max-width: 999px){
+    header{
+        width: calc(100% - 95px);
+        margin-left: 1%;
+        border-end-end-radius:   25px;
+    }
+    #settings{
+        right: 10px;
+    }
+}
+
+
+/*------------------------------------------------------------------------tamaño minimo o movil*/
+@media (max-width: 599px){
+    header{
+        width: calc(100% - 80px);
+        margin-left: 0%;
+    }
+    #settings{
+        right: 0px;
+    }
+}

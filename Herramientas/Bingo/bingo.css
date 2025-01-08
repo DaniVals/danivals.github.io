@@ -1,0 +1,343 @@
+:root{
+    --black: radial-gradient(ellipse at 90% 110%, #333, #666);
+    --white: radial-gradient(ellipse at 90% 110%, #555, #aaa);
+
+    --red: radial-gradient(ellipse at 90% 110%, #500, #a00);
+    --orange: radial-gradient(ellipse at 90% 110%, #530, #a70);
+    --yellow: radial-gradient(ellipse at 90% 110%, #550, #aa0);
+    --green: radial-gradient(ellipse at 90% 110%, #050, #0a0);
+    --blue: radial-gradient(ellipse at 90% 110%, #035, #07a);
+    --purple: radial-gradient(ellipse at 90% 110%, #305, #70a);
+
+    --colorSelected: var(--green);
+    --colorFocus: #0002;
+
+}
+
+
+
+
+
+
+
+.rows{
+    display: flex;
+    justify-content: start;
+}
+#apartados{
+    background-color: var(--BG2);
+    transition: var(--transicion-BG);
+
+    display: flex;
+}
+#apartados #fileInput{ 
+    transition: ease var(--CeroCincoSecs);
+    color: var(--TXT);
+    background-color: var(--BG4);
+    cursor: pointer;
+
+    border-color: var(--BG4);
+    border-style: solid;
+    
+    margin-top: 20px;
+    margin-left: 10%;
+    margin-bottom: 20px;
+    width: 80%;
+    height: 30px;
+}
+#apartados h3{
+    text-align: center;
+    margin: 10px;
+    
+}
+#apartados #generar,
+#apartados #reset,
+#apartados #casillas{
+    transition: ease var(--CeroCincoSecs);
+    background-color: var(--BG4);
+    color: var(--TXT);
+    cursor: pointer;
+
+    border-color: var(--BG4);
+    border-style: solid;
+    
+    margin-left: 10%;
+    width: 80%;
+    height: 30px;
+    
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#apartados #numeroFilas,
+#apartados #numeroBotones{ 
+    margin-left: 10%;
+    width: 40%;
+
+    transition: ease var(--CeroCincoSecs);
+    color: var(--TXT);
+    background-color: var(--BG4);
+    border-color: var(--BG4);
+    border-style: solid;
+}
+#apartados label{
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+
+
+
+
+#colorSettings{
+    width: 80%;
+    margin-left: 10%;
+}
+#colorSelect{
+    appearance: none;
+    width: calc(100% - 35px);
+    background-color: #0000;
+}
+#colorSelect::-webkit-slider-runnable-track {
+    height: 30px; 
+    border-radius: 15px; 
+    background: var(--black);
+}
+#colorSelect::-webkit-slider-thumb {
+    appearance: none;
+    background: #3330;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-top: 5px;
+    cursor: auto;
+}
+#colorSettings:has(input:checked) #colorSelect::-webkit-slider-runnable-track {
+    background: var(--colorSelected);
+}
+#colorSettings:has(input:checked) #colorSelect::-webkit-slider-thumb {
+    background: #333;
+    cursor: pointer;
+}
+
+#colorChangeIcon,
+#freeSpace,
+#random {
+    background-color: #0000;
+    display: inline-block;
+    
+    width: 30px;
+    height: 30px;
+}
+#colorChangeIcon input,
+#freeSpace input,
+#random input{
+    display: none;
+}
+#colorChangeIcon svg ,
+#freeSpace svg ,
+#random svg {
+    transition: fill ease var(--CeroCincoSecs);
+    fill: var(--DESC);
+}
+#random svg line {
+    transition: fill ease var(--CeroCincoSecs);
+    stroke: var(--DESC);
+}
+#colorSettings:has(input:checked) #colorChangeIcon svg,
+#freeSpace:has(input:checked) svg,
+#random:has(input:checked) svg {
+    fill: var(--TXT);
+}
+
+
+#casillasSettings{
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    justify-content: space-around;
+}
+#casillasSettings svg,
+#casillasSettings label{
+    width: 32px;
+    height: 32px;
+}
+
+#apartados #textareaOpciones::placeholder { color: var(--DESC); transition: ease var(--CeroCincoSecs);}
+#apartados #textareaOpciones{
+    background-color: var(--BG4);
+    color: var(--TXT);
+    transition: var(--transicion-BG);
+
+    margin-top: 10px;
+    width: 80%;
+    margin-left: 10%;
+
+    resize: vertical;
+    min-height: 100px;
+}
+
+
+
+
+
+
+#tablero{
+    background-color: var(--BG2);
+    transition: var(--transicion-BG);
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    
+}
+#tablero .linea{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 100%;
+    min-height: 100px;
+}
+#tablero button{    
+    margin: 5px;
+    width: 100%;
+    border-width: 0px;
+
+    position: relative;
+}
+#tablero button textarea{
+    background-color: #00000000;
+    color: var(--LightMode-TXT);
+    
+    text-align: center;
+    font-weight: bolder;
+    font-size: large;
+    
+    
+    position: absolute;
+    top:    40%;
+    bottom: 20%;
+    left:   20%;
+    right:  20%;
+    resize: none;
+
+    border-width: 0px;
+    border-radius: 15px;
+}
+#tablero button textarea::placeholder { color: var(--LightMode-DESC);}
+#tablero button textarea:focus {
+    outline: none;
+    background-color: var(--colorFocus);
+}
+#tablero button ::-webkit-scrollbar{
+    height: 0px;
+}
+.rows:has(#colorSettings input:checked) #tablero button textarea,
+.rows:has(#colorSettings input:checked) #tablero button {
+    cursor: pointer !important;
+}
+
+
+/*tamaño maximo o pc*/
+@media (min-width: 1000px){
+    header{
+        width: 80%;
+        margin-left: 10%;
+    }
+    .rows{
+        flex-direction: row;
+        
+        margin-top: 20px;
+        margin-bottom: 30px;
+        
+        margin-right: calc(10% + 25px);
+        margin-left: calc(10% + 25px);
+    }
+    #apartados{
+        width: 25%;
+        
+        border-end-start-radius: 25px;
+    
+        flex-direction: column;
+    }
+    #tablero{
+        width: 75%;
+        margin-left: 15px;
+    }
+}
+/*tamaño medio o tablet*/
+@media (min-width:600px) and (max-width: 999px){
+    header{
+        width: calc(100% - 95px);
+        margin-left: 1%;
+        border-end-start-radius: 0px !important;
+    }
+    .rows{
+        flex-direction: row;
+        
+        margin-top: 10px;
+        margin-bottom: 20px;
+        
+        margin-right: 1%;
+        margin-left: 1%;
+    }
+    #apartados{
+        width: 25%;
+        
+        border-end-start-radius: 25px;
+    
+        flex-direction: column;
+    }
+    #tablero{
+        width: 75%;
+        margin-left: 5px;
+    }
+}
+/*tamaño minimo o movil*/
+@media (max-width: 599px){
+    header{
+        width: calc(100% - 80px);
+        margin-left: 0%;
+        border-end-start-radius:   0px !important;
+    }
+    .rows{
+        flex-direction: column;
+        
+        margin-top: 10px;
+        margin-bottom: 10px;
+        
+        margin-right: 0%;
+        margin-left: 0%;
+    }
+    #apartados{
+        width: 100%;
+        
+        border-end-start-radius: 0px;
+    
+        flex-direction: row;
+    }
+    #apartados > div{
+        width: 100%;
+    }
+    #apartados #numeroFilas,
+    #apartados #numeroBotones{
+        width: 30%;
+    }
+    #tablero{
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    
+    #colorSelect{
+        appearance: none;
+        width: 100%;
+        background-color: #0000;
+    }
+    #colorChangeIcon{
+        background-color: #0000;
+        display: inline-block;
+        
+        margin-left: calc(50% - 10px);
+    }
+}
